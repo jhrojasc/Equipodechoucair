@@ -1,0 +1,1869 @@
+<html dir="ltr" lang="es" xml:lang="es" class="yui3-js-enabled"><head>
+    <title>Curso: BDD - SerenityBDD + Cucumber (POM)</title>
+    <link rel="shortcut icon" href="//operacion.choucairtesting.com/academy/pluginfile.php/1/theme_fordson/favicon/1629813408/ok.png">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="keywords" content="moodle, Curso: BDD - SerenityBDD + Cucumber (POM)">
+<link rel="stylesheet" type="text/css" href="https://operacion.choucairtesting.com/academy/theme/yui_combo.php?rollup/3.17.2/yui-moodlesimple-min.css"><script charset="utf-8" id="yui_3_17_2_1_1631638783563_8" src="https://operacion.choucairtesting.com/academy/theme/yui_combo.php?m/1629813409/core/event/event-min.js&amp;m/1629813409/filter_mathjaxloader/loader/loader-min.js" async=""></script><script charset="utf-8" id="yui_3_17_2_1_1631638783563_19" src="https://operacion.choucairtesting.com/academy/lib/javascript.php/1629813409/course/completion.js" async=""></script><script charset="utf-8" id="yui_3_17_2_1_1631638783563_23" src="https://operacion.choucairtesting.com/academy/lib/javascript.php/1629813409/mod/folder/module.js" async=""></script><script charset="utf-8" id="yui_3_17_2_1_1631638783563_24" src="https://operacion.choucairtesting.com/academy/theme/yui_combo.php?2in3/2.9.0/build/yui2-treeview/yui2-treeview-min.js&amp;3.17.2/event-simulate/event-simulate-min.js&amp;3.17.2/async-queue/async-queue-min.js&amp;3.17.2/gesture-simulate/gesture-simulate-min.js&amp;3.17.2/node-event-simulate/node-event-simulate-min.js" async=""></script><link charset="utf-8" rel="stylesheet" id="yui_3_17_2_1_1631638783563_25" href="https://operacion.choucairtesting.com/academy/theme/yui_combo.php?2in3/2.9.0/build/yui2-skin-sam-treeview/assets/skins/sam/yui2-skin-sam-treeview-min.css"><script charset="utf-8" id="yui_3_17_2_1_1631638783563_26" src="https://operacion.choucairtesting.com/academy/theme/yui_combo.php?2in3/2.9.0/build/yui2-yahoo/yui2-yahoo-min.js&amp;2in3/2.9.0/build/yui2-dom/yui2-dom-min.js&amp;2in3/2.9.0/build/yui2-event/yui2-event-min.js" async=""></script><script charset="utf-8" id="yui_3_17_2_1_1631638783563_27" src="https://operacion.choucairtesting.com/academy/theme/yui_combo.php?3.17.2/event-mousewheel/event-mousewheel-min.js&amp;3.17.2/event-resize/event-resize-min.js&amp;3.17.2/event-hover/event-hover-min.js&amp;3.17.2/event-touch/event-touch-min.js&amp;3.17.2/event-move/event-move-min.js&amp;3.17.2/event-flick/event-flick-min.js&amp;3.17.2/event-valuechange/event-valuechange-min.js&amp;3.17.2/event-tap/event-tap-min.js" async=""></script><script id="firstthemesheet" type="text/css">/** Required in order to fix style inclusion problems in IE with YUI **/</script><link rel="stylesheet" type="text/css" href="https://operacion.choucairtesting.com/academy/theme/styles.php/fordson/1629813408_1/all">
+<script>
+//<![CDATA[
+var M = {}; M.yui = {};
+M.pageloadstarttime = new Date();
+M.cfg = {"wwwroot":"https:\/\/operacion.choucairtesting.com\/academy","sesskey":"eAzyxaTgoA","sessiontimeout":"7200","themerev":"1629813408","slasharguments":1,"theme":"fordson","iconsystemmodule":"core\/icon_system_fontawesome","jsrev":"1629813409","admin":"admin","svgicons":true,"usertimezone":"Am\u00e9rica\/Bogot\u00e1","contextid":12721,"langrev":1631610264,"templaterev":"1629813409"};var yui1ConfigFn = function(me) {if(/-skin|reset|fonts|grids|base/.test(me.name)){me.type='css';me.path=me.path.replace(/\.js/,'.css');me.path=me.path.replace(/\/yui2-skin/,'/assets/skins/sam/yui2-skin')}};
+var yui2ConfigFn = function(me) {var parts=me.name.replace(/^moodle-/,'').split('-'),component=parts.shift(),module=parts[0],min='-min';if(/-(skin|core)$/.test(me.name)){parts.pop();me.type='css';min=''}
+if(module){var filename=parts.join('-');me.path=component+'/'+module+'/'+filename+min+'.'+me.type}else{me.path=component+'/'+component+'.'+me.type}};
+YUI_config = {"debug":false,"base":"https:\/\/operacion.choucairtesting.com\/academy\/lib\/yuilib\/3.17.2\/","comboBase":"https:\/\/operacion.choucairtesting.com\/academy\/theme\/yui_combo.php?","combine":true,"filter":null,"insertBefore":"firstthemesheet","groups":{"yui2":{"base":"https:\/\/operacion.choucairtesting.com\/academy\/lib\/yuilib\/2in3\/2.9.0\/build\/","comboBase":"https:\/\/operacion.choucairtesting.com\/academy\/theme\/yui_combo.php?","combine":true,"ext":false,"root":"2in3\/2.9.0\/build\/","patterns":{"yui2-":{"group":"yui2","configFn":yui1ConfigFn}}},"moodle":{"name":"moodle","base":"https:\/\/operacion.choucairtesting.com\/academy\/theme\/yui_combo.php?m\/1629813409\/","combine":true,"comboBase":"https:\/\/operacion.choucairtesting.com\/academy\/theme\/yui_combo.php?","ext":false,"root":"m\/1629813409\/","patterns":{"moodle-":{"group":"moodle","configFn":yui2ConfigFn}},"filter":null,"modules":{"moodle-core-actionmenu":{"requires":["base","event","node-event-simulate"]},"moodle-core-blocks":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification"]},"moodle-core-chooserdialogue":{"requires":["base","panel","moodle-core-notification"]},"moodle-core-dragdrop":{"requires":["base","node","io","dom","dd","event-key","event-focus","moodle-core-notification"]},"moodle-core-event":{"requires":["event-custom"]},"moodle-core-formchangechecker":{"requires":["base","event-focus","moodle-core-event"]},"moodle-core-handlebars":{"condition":{"trigger":"handlebars","when":"after"}},"moodle-core-languninstallconfirm":{"requires":["base","node","moodle-core-notification-confirm","moodle-core-notification-alert"]},"moodle-core-lockscroll":{"requires":["plugin","base-build"]},"moodle-core-maintenancemodetimer":{"requires":["base","node"]},"moodle-core-notification":{"requires":["moodle-core-notification-dialogue","moodle-core-notification-alert","moodle-core-notification-confirm","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-core-notification-dialogue":{"requires":["base","node","panel","escape","event-key","dd-plugin","moodle-core-widget-focusafterclose","moodle-core-lockscroll"]},"moodle-core-notification-alert":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-confirm":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-exception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-ajaxexception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-popuphelp":{"requires":["moodle-core-tooltip"]},"moodle-core-tooltip":{"requires":["base","node","io-base","moodle-core-notification-dialogue","json-parse","widget-position","widget-position-align","event-outside","cache-base"]},"moodle-core_availability-form":{"requires":["base","node","event","event-delegate","panel","moodle-core-notification-dialogue","json"]},"moodle-backup-backupselectall":{"requires":["node","event","node-event-simulate","anim"]},"moodle-backup-confirmcancel":{"requires":["node","node-event-simulate","moodle-core-notification-confirm"]},"moodle-course-categoryexpander":{"requires":["node","event-key"]},"moodle-course-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-course-coursebase","moodle-course-util"]},"moodle-course-formatchooser":{"requires":["base","node","node-event-simulate"]},"moodle-course-management":{"requires":["base","node","io-base","moodle-core-notification-exception","json-parse","dd-constrain","dd-proxy","dd-drop","dd-delegate","node-event-delegate"]},"moodle-course-util":{"requires":["node"],"use":["moodle-course-util-base"],"submodules":{"moodle-course-util-base":{},"moodle-course-util-section":{"requires":["node","moodle-course-util-base"]},"moodle-course-util-cm":{"requires":["node","moodle-course-util-base"]}}},"moodle-form-dateselector":{"requires":["base","node","overlay","calendar"]},"moodle-form-passwordunmask":{"requires":[]},"moodle-form-shortforms":{"requires":["node","base","selector-css3","moodle-core-event"]},"moodle-question-chooser":{"requires":["moodle-core-chooserdialogue"]},"moodle-question-preview":{"requires":["base","dom","event-delegate","event-key","core_question_engine"]},"moodle-question-searchform":{"requires":["base","node"]},"moodle-availability_completion-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_date-form":{"requires":["base","node","event","io","moodle-core_availability-form"]},"moodle-availability_grade-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_group-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_grouping-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_profile-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-mod_assign-history":{"requires":["node","transition"]},"moodle-mod_customcert-rearrange":{"requires":["dd-delegate","dd-drag"]},"moodle-mod_quiz-autosave":{"requires":["base","node","event","event-valuechange","node-event-delegate","io-form"]},"moodle-mod_quiz-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-base","moodle-mod_quiz-util-page","moodle-mod_quiz-util-slot","moodle-course-util"]},"moodle-mod_quiz-modform":{"requires":["base","node","event"]},"moodle-mod_quiz-questionchooser":{"requires":["moodle-core-chooserdialogue","moodle-mod_quiz-util","querystring-parse"]},"moodle-mod_quiz-quizbase":{"requires":["base","node"]},"moodle-mod_quiz-toolboxes":{"requires":["base","node","event","event-key","io","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-slot","moodle-core-notification-ajaxexception"]},"moodle-mod_quiz-util":{"requires":["node","moodle-core-actionmenu"],"use":["moodle-mod_quiz-util-base"],"submodules":{"moodle-mod_quiz-util-base":{},"moodle-mod_quiz-util-slot":{"requires":["node","moodle-mod_quiz-util-base"]},"moodle-mod_quiz-util-page":{"requires":["node","moodle-mod_quiz-util-base"]}}},"moodle-message_airnotifier-toolboxes":{"requires":["base","node","io"]},"moodle-filter_glossary-autolinker":{"requires":["base","node","io-base","json-parse","event-delegate","overlay","moodle-core-event","moodle-core-notification-alert","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-filter_mathjaxloader-loader":{"requires":["moodle-core-event"]},"moodle-editor_atto-editor":{"requires":["node","transition","io","overlay","escape","event","event-simulate","event-custom","node-event-html5","node-event-simulate","yui-throttle","moodle-core-notification-dialogue","moodle-core-notification-confirm","moodle-editor_atto-rangy","handlebars","timers","querystring-stringify"]},"moodle-editor_atto-plugin":{"requires":["node","base","escape","event","event-outside","handlebars","event-custom","timers","moodle-editor_atto-menu"]},"moodle-editor_atto-menu":{"requires":["moodle-core-notification-dialogue","node","event","event-custom"]},"moodle-editor_atto-rangy":{"requires":[]},"moodle-report_eventlist-eventfilter":{"requires":["base","event","node","node-event-delegate","datatable","autocomplete","autocomplete-filters"]},"moodle-report_loglive-fetchlogs":{"requires":["base","event","node","io","node-event-delegate"]},"moodle-gradereport_grader-gradereporttable":{"requires":["base","node","event","handlebars","overlay","event-hover"]},"moodle-gradereport_history-userselector":{"requires":["escape","event-delegate","event-key","handlebars","io-base","json-parse","moodle-core-notification-dialogue"]},"moodle-tool_capability-search":{"requires":["base","node"]},"moodle-tool_lp-dragdrop-reorder":{"requires":["moodle-core-dragdrop"]},"moodle-tool_monitor-dropdown":{"requires":["base","event","node"]},"moodle-assignfeedback_editpdf-editor":{"requires":["base","event","node","io","graphics","json","event-move","event-resize","transition","querystring-stringify-simple","moodle-core-notification-dialog","moodle-core-notification-alert","moodle-core-notification-warning","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-atto_accessibilitychecker-button":{"requires":["color-base","moodle-editor_atto-plugin"]},"moodle-atto_accessibilityhelper-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_align-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_bold-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_charmap-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_clear-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_collapse-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_emojipicker-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_emoticon-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_equation-button":{"requires":["moodle-editor_atto-plugin","moodle-core-event","io","event-valuechange","tabview","array-extras"]},"moodle-atto_h5p-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_html-beautify":{},"moodle-atto_html-button":{"requires":["promise","moodle-editor_atto-plugin","moodle-atto_html-beautify","moodle-atto_html-codemirror","event-valuechange"]},"moodle-atto_html-codemirror":{"requires":["moodle-atto_html-codemirror-skin"]},"moodle-atto_image-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_indent-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_italic-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_link-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_managefiles-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_managefiles-usedfiles":{"requires":["node","escape"]},"moodle-atto_media-button":{"requires":["moodle-editor_atto-plugin","moodle-form-shortforms"]},"moodle-atto_noautolink-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_orderedlist-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_recordrtc-button":{"requires":["moodle-editor_atto-plugin","moodle-atto_recordrtc-recording"]},"moodle-atto_recordrtc-recording":{"requires":["moodle-atto_recordrtc-button"]},"moodle-atto_rtl-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_strike-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_subscript-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_superscript-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_table-button":{"requires":["moodle-editor_atto-plugin","moodle-editor_atto-menu","event","event-valuechange"]},"moodle-atto_title-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_underline-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_undo-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_unorderedlist-button":{"requires":["moodle-editor_atto-plugin"]}}},"gallery":{"name":"gallery","base":"https:\/\/operacion.choucairtesting.com\/academy\/lib\/yuilib\/gallery\/","combine":true,"comboBase":"https:\/\/operacion.choucairtesting.com\/academy\/theme\/yui_combo.php?","ext":false,"root":"gallery\/1629813409\/","patterns":{"gallery-":{"group":"gallery"}}}},"modules":{"core_filepicker":{"name":"core_filepicker","fullpath":"https:\/\/operacion.choucairtesting.com\/academy\/lib\/javascript.php\/1629813409\/repository\/filepicker.js","requires":["base","node","node-event-simulate","json","async-queue","io-base","io-upload-iframe","io-form","yui2-treeview","panel","cookie","datatable","datatable-sort","resize-plugin","dd-plugin","escape","moodle-core_filepicker","moodle-core-notification-dialogue"]},"core_comment":{"name":"core_comment","fullpath":"https:\/\/operacion.choucairtesting.com\/academy\/lib\/javascript.php\/1629813409\/comment\/comment.js","requires":["base","io-base","node","json","yui2-animation","overlay","escape"]},"mathjax":{"name":"mathjax","fullpath":"https:\/\/cdn.jsdelivr.net\/npm\/mathjax@2.7.8\/MathJax.js?delayStartupUntil=configured"},"core_completion":{"name":"core_completion","fullpath":"https:\/\/operacion.choucairtesting.com\/academy\/lib\/javascript.php\/1629813409\/course\/completion.js"}}};
+M.yui.loader = {modules: {}};
+
+//]]>
+</script>
+
+<style>
+.course-content li.section ul {
+    list-style: disc;
+    text-align: left;
+    list-style: disc;
+}
+
+.modchooser .modal-footer {
+    background: #fff;
+    height: auto;
+}
+
+        .link{
+            padding-right: 10px !important;
+        }
+        
+        .site-info a {
+            color: #FFFFFF !important;
+        }
+        
+        .link:hover {
+            color: #2B7DE1 !important;
+        }
+      
+ </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="core/first" src="https://operacion.choucairtesting.com/academy/lib/requirejs.php/1629813409/core/first.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery" src="https://operacion.choucairtesting.com/academy/lib/javascript.php/1629813409/lib/jquery/jquery-3.4.1.min.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    config: ["Accessible.js", "Safe.js"],
+    errorSettings: { message: ["!"] },
+    skipStartupTypeset: true,
+    messageStyle: "none"
+});
+</script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="theme_boost/tooltip" src="https://operacion.choucairtesting.com/academy/lib/requirejs.php/1629813409/theme_boost/tooltip.js"></script></head>
+<body id="page-course-view-topics" class="format-topics  path-course path-course-view chrome dir-ltr lang-es yui-skin-sam yui3-skin-sam operacion-choucairtesting-com--academy pagelayout-course course-1246 context-12721 category-19  jsenabled">
+
+<div id="page-wrapper">
+
+    <div>
+    <a class="sr-only sr-only-focusable" href="#maincontent">Salta al contenido principal</a>
+</div><script src="https://operacion.choucairtesting.com/academy/lib/javascript.php/1629813409/lib/babel-polyfill/polyfill.min.js"></script>
+<script src="https://operacion.choucairtesting.com/academy/lib/javascript.php/1629813409/lib/polyfills/polyfill.js"></script>
+<script src="https://operacion.choucairtesting.com/academy/theme/yui_combo.php?rollup/3.17.2/yui-moodlesimple-min.js"></script><script src="https://operacion.choucairtesting.com/academy/theme/jquery.php/core/jquery-3.4.1.min.js"></script>
+<script src="https://operacion.choucairtesting.com/academy/lib/javascript.php/1629813409/lib/javascript-static.js"></script>
+<script>
+//<![CDATA[
+document.body.className += ' jsenabled';
+//]]>
+</script>
+
+
+
+    <nav class="fixed-top navbar navbar-fhs  navbar-student navbar-expand moodle-has-zindex">
+            <div data-region="drawer-toggle" class="d-inline-block mr-3">
+                <button aria-expanded="false" aria-controls="nav-drawer" type="button" class="btn nav-link float-sm-left mr-1 btn-secondary" data-action="toggle-drawer" data-side="left" data-preference="drawer-open-nav"><i class="icon fa fa-bars fa-fw " aria-hidden="true"></i><span class="sr-only">Panel lateral</span></button>
+            </div>
+            <a href="https://operacion.choucairtesting.com/academy" class="navbar-brand has-logo
+                    ">
+                    <span class="logo d-none d-sm-inline">
+                        <img src="https://operacion.choucairtesting.com/academy/pluginfile.php/1/core_admin/logocompact/300x300/1629813408/icon.png" alt="Choucair Academy">
+                    </span>
+                <span class="site-name d-none d-md-inline">Choucair Academy</span>
+            </a>
+            
+            <!-- course_controls -->
+            <div class="coursecontrols nav-item d-flex">
+                <div class="studentdash nav-item nav-link">
+        <a role="button" data-tooltip="tooltip" data-placement="bottom" title="" data-toggle="modal" href="#studentdashslider" class="btn btn-secondary fhs-tooltip" data-original-title="Este curso"><i class="fa fa-cogs" aria-hidden="true"></i></a>
+    </div>
+                
+            </div>
+    
+            <ul class="navbar-nav d-none d-md-flex">
+                <!-- custom_menu -->
+                
+                
+                <!-- page_heading_menu -->
+                
+            </ul>
+            <ul class="nav navbar-nav ml-auto">
+                <div class="d-none d-lg-block">
+                <div class="search-input-wrapper nav-link" id="6140d4c361200"><div role="button" tabindex="0"><i class="icon fa fa-search fa-fw " title="Búsqueda" aria-label="Búsqueda"></i></div><form class="search-input-form" action="https://operacion.choucairtesting.com/academy/search/index.php"><label for="id_q_6140d4c361200" class="accesshide">Escriba su búsqueda</label><input type="text" name="q" placeholder="Búsqueda" size="13" tabindex="-1" id="id_q_6140d4c361200" class="form-control"><input type="hidden" name="context" value="12721"></form></div>
+            </div>
+                <!-- navbar_plugin_output -->
+                <li class="nav-item">
+                <div class="popover-region collapsed popover-region-notifications" id="nav-notification-popover-container" data-userid="9200" data-region="popover-region">
+    <div class="popover-region-toggle nav-link" data-region="popover-region-toggle" role="button" aria-controls="popover-region-container-6140d4c3641736140d4c331d5e3" aria-haspopup="true" aria-label="Mostrar la ventana de notificaciones cuando no hay ninguna" tabindex="0">
+                <i class="icon fa fa-bell fa-fw " title="Mostrar/ocultar menú de notificaciones" aria-label="Mostrar/ocultar menú de notificaciones"></i>
+        <div class="count-container hidden" data-region="count-container" aria-label="Hay 0 notificaciones sin leer">0</div>
+
+    </div>
+    <div id="popover-region-container-6140d4c3641736140d4c331d5e3" class="popover-region-container" data-region="popover-region-container" aria-expanded="false" aria-hidden="true" aria-label="Ventana de notificación" role="region">
+        <div class="popover-region-header-container">
+            <h3 class="popover-region-header-text" data-region="popover-region-header-text">Notificaciones</h3>
+            <div class="popover-region-header-actions" data-region="popover-region-header-actions">        <a class="mark-all-read-button" href="#" title="Marcar como leído" data-action="mark-all-read" role="button" aria-label="Marcar como leído">
+            <span class="normal-icon"><i class="icon fa fa-check fa-fw " aria-hidden="true"></i></span>
+            <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Enviando" aria-label="Enviando"></i></span>
+        </a>
+        <a href="https://operacion.choucairtesting.com/academy/message/notificationpreferences.php?userid=9200" title="Preferencias de notificación" aria-label="Preferencias de notificación">
+            <i class="icon fa fa-cog fa-fw " aria-hidden="true"></i>
+        </a>
+</div>
+        </div>
+        <div class="popover-region-content-container" data-region="popover-region-content-container">
+            <div class="popover-region-content" data-region="popover-region-content">
+                        <div class="all-notifications" data-region="all-notifications" role="log" aria-busy="false" aria-atomic="false" aria-relevant="additions"></div>
+        <div class="empty-message" tabindex="0" data-region="empty-message">No tienes notificaciones</div>
+
+            </div>
+            <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Enviando" aria-label="Enviando"></i></span>
+        </div>
+                <a class="see-all-link" href="https://operacion.choucairtesting.com/academy/message/output/popup/notifications.php">
+                    <div class="popover-region-footer-container">
+                        <div class="popover-region-seeall-text">Ver todo</div>
+                    </div>
+                </a>
+    </div>
+</div><div class="popover-region collapsed" data-region="popover-region-messages">
+    <a id="message-drawer-toggle-6140d4c3653f26140d4c331d5e4" class="nav-link d-inline-block popover-region-toggle position-relative" href="#" role="button">
+        <i class="icon fa fa-comment fa-fw " title="Mostrar/ocultar cajón de mensajería" aria-label="Mostrar/ocultar cajón de mensajería"></i>
+        <div class="count-container hidden" data-region="count-container" aria-label="Hay 0 conversaciones sin leer">0</div>
+    </a>
+    <span class="sr-only sr-only-focusable" data-region="jumpto" tabindex="-1"></span></div>
+                </li>
+                <!-- user_menu -->
+                <li class="nav-item d-flex align-items-center">
+                    <div class="usermenu"><div class="action-menu moodle-actionmenu nowrap-items d-inline" id="action-menu-1" data-enhance="moodle-core-actionmenu">
+
+        <div class="menubar d-flex " id="action-menu-1-menubar" role="menubar">
+
+            
+
+
+                <div class="action-menu-trigger">
+                    <div class="dropdown">
+                        <a href="#" tabindex="0" class="d-inline-block  dropdown-toggle icon-no-margin" id="action-menu-toggle-1" aria-label="Menú de usuario" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" aria-controls="action-menu-1-menu">
+                            
+                            <span class="userbutton"><span class="usertext mr-1">Jhon Hader Rojas Cabrera</span><span class="avatars"><span class="avatar current"><img src="https://operacion.choucairtesting.com/academy/theme/image.php/fordson/core/1629813408/u/f2" class="userpicture defaultuserpic" width="35" height="35" aria-hidden="true"></span></span></span>
+                                
+                            <b class="caret"></b>
+                        </a>
+                            <div class="dropdown-menu dropdown-menu-right menu  align-tr-br" id="action-menu-1-menu" data-rel="menu-content" aria-labelledby="action-menu-toggle-1" role="menu" data-align="tr-br">
+                                                                <a href="https://operacion.choucairtesting.com/academy/my/" class="dropdown-item menu-action" role="menuitem" data-title="mymoodle,admin" aria-labelledby="actionmenuaction-1">
+                                <i class="icon fa fa-tachometer fa-fw " aria-hidden="true"></i>
+                                <span class="menu-action-text" id="actionmenuaction-1">Área personal</span>
+                        </a>
+                    <div class="dropdown-divider" role="presentation"><span class="filler">&nbsp;</span></div>
+                                                                <a href="https://operacion.choucairtesting.com/academy/user/profile.php?id=9200" class="dropdown-item menu-action" role="menuitem" data-title="profile,moodle" aria-labelledby="actionmenuaction-2">
+                                <i class="icon fa fa-user fa-fw " aria-hidden="true"></i>
+                                <span class="menu-action-text" id="actionmenuaction-2">Perfil</span>
+                        </a>
+                                                                <a href="https://operacion.choucairtesting.com/academy/grade/report/overview/index.php" class="dropdown-item menu-action" role="menuitem" data-title="grades,grades" aria-labelledby="actionmenuaction-3">
+                                <i class="icon fa fa-table fa-fw " aria-hidden="true"></i>
+                                <span class="menu-action-text" id="actionmenuaction-3">Calificaciones</span>
+                        </a>
+                                                                <a href="https://operacion.choucairtesting.com/academy/message/index.php" class="dropdown-item menu-action" role="menuitem" data-title="messages,message" aria-labelledby="actionmenuaction-4">
+                                <i class="icon fa fa-comment fa-fw " aria-hidden="true"></i>
+                                <span class="menu-action-text" id="actionmenuaction-4">Mensajes</span>
+                        </a>
+                                                                <a href="https://operacion.choucairtesting.com/academy/user/preferences.php" class="dropdown-item menu-action" role="menuitem" data-title="preferences,moodle" aria-labelledby="actionmenuaction-5">
+                                <i class="icon fa fa-wrench fa-fw " aria-hidden="true"></i>
+                                <span class="menu-action-text" id="actionmenuaction-5">Preferencias</span>
+                        </a>
+                    <div class="dropdown-divider" role="presentation"><span class="filler">&nbsp;</span></div>
+                                                                <a href="https://operacion.choucairtesting.com/academy/login/logout.php?sesskey=eAzyxaTgoA" class="dropdown-item menu-action" role="menuitem" data-title="logout,moodle" aria-labelledby="actionmenuaction-6">
+                                <i class="icon fa fa-sign-out fa-fw " aria-hidden="true"></i>
+                                <span class="menu-action-text" id="actionmenuaction-6">Cerrar sesión</span>
+                        </a>
+                            </div>
+                    </div>
+                </div>
+
+        </div>
+
+</div></div>
+                </li>
+            </ul>
+            <!-- search_box -->
+    </nav>
+    
+
+
+    <div id="page" class="container-fluid">
+        
+        <div id="learningcontent">
+        
+            <div class="modal fade" id="studentdashslider" tabindex="-1" role="dialog" aria-labelledby="teacherdashslider" aria-hidden="true">
+<div class="modal-dialog" role="document">
+
+    <div class="modal-content">
+    <div class="modal-body">
+
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </button>
+
+        <div class="studentdashboard">
+        <div class="container-fluid">
+            <div class="row">
+
+                    <div class="col-md-2 studentgradebook">
+                        <p>Mis calificaciones</p><a href="https://operacion.choucairtesting.com/academy/grade/report/user/index.php?id=1246" alt="Mis calificaciones"><i class="fa fa-5x fa-bar-chart"></i></a>
+                    </div>
+
+                     
+                    <div class="col-md-2 studentadministration">
+                        <p>Administración del curso</p><a href="https://operacion.choucairtesting.com/academy/course/admin.php?courseid=1246" alt="Administración del curso"><i class="fa fa-5x fa-cog"></i></a>
+                    </div>
+                     
+                </div>
+
+            <div class="row">
+                    <div class="col-md-4 coursesummary">
+                        <div class="dashtitle">
+                            <h3><i class="fa fa-map">&nbsp;</i>Descripción del curso</h3>
+                        </div>
+                            <div class="card-block">
+                                    
+                            </div>
+                    </div>
+
+                    <div class="col-md-5 coursestafflisting">
+                        <div class="dashtitle">
+                            <h3><i class="fa fa-users">&nbsp;</i>Profesores del curso</h3>
+                        </div>
+                            <div class="list-group">
+                                <div class="list-group-item">
+                                    <div class="staffmember">
+                                        <a href="https://operacion.choucairtesting.com/academy/user/view.php?id=3138&amp;course=1246" class="d-inline-block aabtn"><img src="https://operacion.choucairtesting.com/academy/pluginfile.php/4150/user/icon/fordson/f1?rev=32096" class="userpicture" width="50" height="50" alt="Imagen de Yeison Ferney Arias Castrillon" title="Imagen de Yeison Ferney Arias Castrillon"></a>
+                                        <div class="staffinfo">
+                                            <h4>Yeison Ferney Arias Castrillon </h4>
+                                            <p> <br> <a href="https://operacion.choucairtesting.com/academy/message/index.php?id=3138"><i class="fa fa-comment">&nbsp;</i>Enviar mensaje</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-group">
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 activitylinks">
+                        <div class="dashtitle">
+                            <h3><i class="fa fa-check-square-o dashicon"></i>Actividades</h3>     
+                        </div>
+                        <div class="list-group">
+                            <div class="list-group" aria-labelledby="list-group-6140d4c3685cb6140d4c331d5e13">
+        <a href="https://operacion.choucairtesting.com/academy/course/resources.php?id=1246" class="list-group-item">Recursos</a>
+ </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 studentprogress">
+                    Mi progreso 
+                    <div class="progress border w-100">
+    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="13" style="width: 13%" aria-valuemin="0" aria-valuemax="100"> 
+    	<div class="small">
+		    <span class="sr-only">Progreso del curso:</span>
+		    <strong>13% Completado </strong>
+		</div>
+    </div>
+</div>
+                </div>
+        </div>
+        </div>
+
+    </div>
+    </div>
+
+</div>
+</div>
+
+<div style="clear:both;"></div>
+            <header id="page-header" class="row">
+    <div class="col-12 pt-3 pb-3">
+        <div class="card ">
+                <div class="headerbkg"><div class="withimage" style="background-image: url(&quot;https://operacion.choucairtesting.com/academy/pluginfile.php/12721/course/overviewfiles/banersito_CUCU4.png&quot;); background-size: cover; background-position:center;
+                width: 100%; height: 100%;"></div></div>
+            <div class="card-body ">
+                <div class="d-flex">
+                    <div class="mr-auto">
+                        <a href="https://operacion.choucairtesting.com/academy/course/view.php?id=1246"><div class="page-context-header"><div class="page-header-headings"><h1>BDD - SerenityBDD + Cucumber (POM)</h1></div></div></a>
+                    </div>
+
+                    <div class="header-actions-container flex-shrink-0" data-region="header-actions-container">
+                    </div>
+                </div>
+                <div class="d-flex flex-wrap">
+                    <div id="page-navbar">
+                        <nav role="navigation" aria-label="Barra de navegación">
+    <ul class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="https://operacion.choucairtesting.com/academy/my/">Área personal</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="https://operacion.choucairtesting.com/academy/course/index.php">Cursos</a>
+                </li>
+                <li class="breadcrumb-item dimmed_text_fhs">
+                    <a href="https://operacion.choucairtesting.com/academy/course/index.php?categoryid=2">UNIVERSIDAD CHOUCAIR</a>
+                </li>
+                <li class="breadcrumb-item dimmed_text_fhs">
+                    <a href="https://operacion.choucairtesting.com/academy/course/index.php?categoryid=7">ESCUELA TÉCNICA</a>
+                </li>
+                <li class="breadcrumb-item dimmed_text_fhs">
+                    <a href="https://operacion.choucairtesting.com/academy/course/index.php?categoryid=19">AUTOMATIZACIÓN</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="https://operacion.choucairtesting.com/academy/course/view.php?id=1246" aria-current="page" title="BDD - SerenityBDD + Cucumber (POM)">BDD - SerenityBDD + Cucumber (POM)</a>
+                </li>
+    </ul>
+</nav>
+                    </div>
+
+                    <div class="ml-auto d-flex">
+                        
+                    </div>
+                    <div id="course-header">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+            
+            <div id="page-content" class="row pb-3">
+                <div id="region-main-box" class="col-12">
+                    <section id="region-main">
+
+                                
+                                <span class="notifications" id="user-notifications"></span>
+                                <div role="main"><span id="maincontent"></span><form action="." method="get"><div><input type="hidden" id="completion_dynamic_change" name="completion_dynamic_change" value="0"></div></form><div class="course-content"><div id="completionprogressid" class="completionprogress">Su progreso<a class="btn btn-link p-0" role="button" data-container="body" data-toggle="popover" data-placement="right" data-content="<div class=&quot;no-overflow&quot;><p>Una marca junto al nombre de la actividad puede utilizarse para indicar que una actividad se completó.</p>
+
+<p>Si se muestra una casilla con el borde punteado, la marca aparecerá automáticamente cuando se haya completado la actividad de acuerdo con las condiciones establecidas por el profesor.</p>
+
+<p>Si se muestra una casilla con el borde sólido, entonces será posible hacer clic sobre ella cuando piense que ha finalizado la actividad. (Si se vuelve a hacer clic sobre ella, la marca desaparece en caso de que haya cambiado de opinión). Esto es una acción opcional que se utiliza para llevar un seguimiento personal del progreso a lo largo del curso.</p>
+</div> " data-html="true" tabindex="0" data-trigger="focus">
+  <i class="icon fa fa-question-circle text-info fa-fw " title="Ayuda con Casillas para marcar el grado de finalización" aria-label="Ayuda con Casillas para marcar el grado de finalización"></i>
+</a></div><h2 class="accesshide">Diagrama de temas</h2><ul class="topics"><li id="section-0" class="section main clearfix" role="region" aria-labelledby="sectionid-804-title" data-sectionid="0" data-sectionreturnid="0"><div class="left side"></div><div class="right side"><img class="icon spacer" width="1" height="1" alt="" aria-hidden="true" src="https://operacion.choucairtesting.com/academy/theme/image.php/fordson/core/1629813408/spacer"></div><div class="content"><h3 id="sectionid-804-title" class="sectionname"><span><a href="https://operacion.choucairtesting.com/academy/course/view.php?id=1246#section-0">Automatización - Recursos para el aprendizaje</a></span></h3><div class="section_availability"></div><div class="summary"><div class="no-overflow"><p style="text-align: center;"><br></p></div></div><ul class="section img-text"></ul></div></li><li id="section-1" class="section main clearfix" role="region" aria-labelledby="sectionid-809-title" data-sectionid="1" data-sectionreturnid="0"><div class="left side"></div><div class="right side"><img class="icon spacer" width="1" height="1" alt="" aria-hidden="true" src="https://operacion.choucairtesting.com/academy/theme/image.php/fordson/core/1629813408/spacer"></div><div class="content"><h3 id="sectionid-809-title" class="sectionname"><span><a href="https://operacion.choucairtesting.com/academy/course/view.php?id=1246#section-1">BDD - SerenityBDD + Cucumber (POM)</a></span></h3><div class="section_availability"></div><div class="summary"><div class="no-overflow"><p style="text-align: center; "><img src="https://operacion.choucairtesting.com/academy/pluginfile.php/12721/course/section/809/SerenityMesa%20de%20trabajo%2016%20copia%202.png" alt="" width="900" height="330" role="presentation"><br></p></div></div><ul class="section img-text"><li class="activity resource modtype_resource " id="module-3031"><div><div class="mod-indent-outer w-100"><div class="mod-indent"></div><div><div class="activityinstance"><a class="aalink" onclick="window.open('https://operacion.choucairtesting.com/academy/mod/resource/view.php?id=3031&amp;redirect=1', '', 'width=620,height=450,toolbar=no,location=no,menubar=no,copyhistory=no,status=no,directories=no,scrollbars=yes,resizable=yes'); return false;" href="https://operacion.choucairtesting.com/academy/mod/resource/view.php?id=3031"><img src="https://operacion.choucairtesting.com/academy/theme/image.php/fordson/core/1629813408/f/pdf" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true"><span class="instancename">Primeros Pasos<span class="accesshide "> Archivo</span></span></a></div><div class="actions"><span class="autocompletion"><img class="icon " title="Finalizado: Primeros Pasos" alt="Finalizado: Primeros Pasos" src="https://operacion.choucairtesting.com/academy/theme/image.php/fordson/core/1629813408/i/completion-auto-y"></span></div><div class="contentafterlink"><div class="no-overflow"><div class="no-overflow"><p></p><h4 style="margin: 0cm 0cm 7.5pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;">Antes de iniciar con el proceso de creación de pruebas
+automatizadas bajo el marco BDD, es necesario verificar que se cuente con las
+herramientas instaladas adecuadamente, adicional se ha construido un proyecto
+base el cual servirá de modelo para la creación de los talleres de
+capacitación.</h4><br><p></p></div></div></div></div></div></div></li><li class="activity resource modtype_resource " id="module-3033"><div><div class="mod-indent-outer w-100"><div class="mod-indent"></div><div><div class="activityinstance"><a class="aalink" onclick="window.open('https://operacion.choucairtesting.com/academy/mod/resource/view.php?id=3033&amp;redirect=1', '', 'width=620,height=450,toolbar=no,location=no,menubar=no,copyhistory=no,status=no,directories=no,scrollbars=yes,resizable=yes'); return false;" href="https://operacion.choucairtesting.com/academy/mod/resource/view.php?id=3033"><img src="https://operacion.choucairtesting.com/academy/theme/image.php/fordson/core/1629813408/f/pdf" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true"><span class="instancename">Creando mi primer Historia de Usuario<span class="accesshide "> Archivo</span></span></a></div><div class="actions"><span class="autocompletion"><img class="icon " title="Sin finalizar: Creando mi primer Historia de Usuario" alt="Sin finalizar: Creando mi primer Historia de Usuario" src="https://operacion.choucairtesting.com/academy/theme/image.php/fordson/core/1629813408/i/completion-auto-n"></span></div><div class="contentafterlink"><div class="no-overflow"><div class="no-overflow"><p></p><h4 style="margin: 0cm 0cm 7.5pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;">BDD (Behavior Driven Development): Desarrollo guiado por el
+comportamiento, consiste básicamente en una estrategia de desarrollo y lo que
+plantea es la definición de los requisitos desde el punto de vista del
+comportamiento de la aplicación, desde el negocio, creado en un lenguaje común
+para el negocio y para los técnicos.</h4><br><p></p></div></div></div></div></div></div></li><li class="activity resource modtype_resource " id="module-3035"><div><div class="mod-indent-outer w-100"><div class="mod-indent"></div><div><div class="activityinstance"><a class="aalink" onclick="window.open('https://operacion.choucairtesting.com/academy/mod/resource/view.php?id=3035&amp;redirect=1', '', 'width=620,height=450,toolbar=no,location=no,menubar=no,copyhistory=no,status=no,directories=no,scrollbars=yes,resizable=yes'); return false;" href="https://operacion.choucairtesting.com/academy/mod/resource/view.php?id=3035"><img src="https://operacion.choucairtesting.com/academy/theme/image.php/fordson/core/1629813408/f/pdf" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true"><span class="instancename">BDD 3 - Implementando Pasos y Objetos<span class="accesshide "> Archivo</span></span></a></div><div class="actions"><span class="autocompletion"><img class="icon " title="Sin finalizar: BDD 3 - Implementando Pasos y Objetos" alt="Sin finalizar: BDD 3 - Implementando Pasos y Objetos" src="https://operacion.choucairtesting.com/academy/theme/image.php/fordson/core/1629813408/i/completion-auto-n"></span></div><div class="contentafterlink"><div class="no-overflow"><div class="no-overflow"><p></p><p style="margin-top:0cm;margin-right:0cm;margin-bottom:7.5pt;margin-left:0cm;
+background:white"></p><h4 style="margin: 0cm 0cm 7.5pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; text-decoration-style: initial; text-decoration-color: initial;"><span style="background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;">Ya contamos con nuestro archivo de
+características (.feature) listo, pero no hay ningún código en&nbsp;segundo
+plano para admitir estos pasos, por lo tanto, el trabajo está medio hecho.<br></span><span style="background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;">Ahora debemos escribir el código necesario para
+que nuestros pasos sean ejecutados de forma&nbsp;automática.</span></h4><p style="margin: 0cm 0cm 7.5pt; text-align: justify; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"></p>
+
+<p style="margin: 0cm 0cm 7.5pt; text-align: justify; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; orphans: 2; widows: 2; text-decoration-style: initial; text-decoration-color: initial;"></p><br><p></p><p></p></div></div></div></div></div></div></li><li class="activity resource modtype_resource " id="module-3036"><div><div class="mod-indent-outer w-100"><div class="mod-indent"></div><div><div class="activityinstance"><a class="aalink" onclick="window.open('https://operacion.choucairtesting.com/academy/mod/resource/view.php?id=3036&amp;redirect=1', '', 'width=620,height=450,toolbar=no,location=no,menubar=no,copyhistory=no,status=no,directories=no,scrollbars=yes,resizable=yes'); return false;" href="https://operacion.choucairtesting.com/academy/mod/resource/view.php?id=3036"><img src="https://operacion.choucairtesting.com/academy/theme/image.php/fordson/core/1629813408/f/pdf" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true"><span class="instancename">BDD 4 - Implementando Pasos y Objetos II<span class="accesshide "> Archivo</span></span></a></div><div class="actions"><span class="autocompletion"><img class="icon " title="Sin finalizar: BDD 4 - Implementando Pasos y Objetos II" alt="Sin finalizar: BDD 4 - Implementando Pasos y Objetos II" src="https://operacion.choucairtesting.com/academy/theme/image.php/fordson/core/1629813408/i/completion-auto-n"></span></div><div class="contentafterlink"><div class="no-overflow"><div class="no-overflow"><h4>Continuemos...</h4></div></div></div></div></div></div></li><li class="activity resource modtype_resource " id="module-3037"><div><div class="mod-indent-outer w-100"><div class="mod-indent"></div><div><div class="activityinstance"><a class="aalink" onclick="window.open('https://operacion.choucairtesting.com/academy/mod/resource/view.php?id=3037&amp;redirect=1', '', 'width=620,height=450,toolbar=no,location=no,menubar=no,copyhistory=no,status=no,directories=no,scrollbars=yes,resizable=yes'); return false;" href="https://operacion.choucairtesting.com/academy/mod/resource/view.php?id=3037"><img src="https://operacion.choucairtesting.com/academy/theme/image.php/fordson/core/1629813408/f/pdf" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true"><span class="instancename">BDD 5 - Implementando Pasos y Objetos III<span class="accesshide "> Archivo</span></span></a></div><div class="actions"><span class="autocompletion"><img class="icon " title="Sin finalizar: BDD 5 - Implementando Pasos y Objetos III" alt="Sin finalizar: BDD 5 - Implementando Pasos y Objetos III" src="https://operacion.choucairtesting.com/academy/theme/image.php/fordson/core/1629813408/i/completion-auto-n"></span></div><div class="contentafterlink"><div class="no-overflow"><div class="no-overflow"><h4>Continuemos...</h4></div></div></div></div></div></div></li><li class="activity resource modtype_resource " id="module-3038"><div><div class="mod-indent-outer w-100"><div class="mod-indent"></div><div><div class="activityinstance"><a class="aalink" onclick="window.open('https://operacion.choucairtesting.com/academy/mod/resource/view.php?id=3038&amp;redirect=1', '', 'width=620,height=450,toolbar=no,location=no,menubar=no,copyhistory=no,status=no,directories=no,scrollbars=yes,resizable=yes'); return false;" href="https://operacion.choucairtesting.com/academy/mod/resource/view.php?id=3038"><img src="https://operacion.choucairtesting.com/academy/theme/image.php/fordson/core/1629813408/f/pdf" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true"><span class="instancename">BDD 6 - Trabajar con base de datos BD2   (*)      <span class="accesshide "> Archivo</span></span></a></div><div class="actions"><span class="autocompletion"><img class="icon " title="Sin finalizar: BDD 6 - Trabajar con base de datos BD2   (*)      " alt="Sin finalizar: BDD 6 - Trabajar con base de datos BD2   (*)      " src="https://operacion.choucairtesting.com/academy/theme/image.php/fordson/core/1629813408/i/completion-auto-n"></span></div><div class="contentafterlink"><div class="no-overflow"><div class="no-overflow"><h5></h5><h4 style="margin-bottom: 7.5pt; line-height: 15pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"></h4><h4 style="margin-bottom: 7.5pt; line-height: 15pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><span style="">En muchos clientes existe este tipo
+de base de datos que requieren una conexión específica,&nbsp;<span style="background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;">en el caso que se tenga el acceso a dicha base de
+datos es obligatorio el desarrollo del capítulo</span>, en el caso de que no se
+requiera no se desarrolla pero si se hace una lectura ya que sería de manera
+similar para otros Sistemas de Gestión de Base de Datos</span><b><span style="background-color: white; font-size: 14pt; font-family: Arial, sans-serif; color: rgb(51, 51, 51);">.</span></b></h4><br></div></div></div></div></div></div></li><li class="activity resource modtype_resource " id="module-3039"><div><div class="mod-indent-outer w-100"><div class="mod-indent"></div><div><div class="activityinstance"><a class="aalink" onclick="window.open('https://operacion.choucairtesting.com/academy/mod/resource/view.php?id=3039&amp;redirect=1', '', 'width=620,height=450,toolbar=no,location=no,menubar=no,copyhistory=no,status=no,directories=no,scrollbars=yes,resizable=yes'); return false;" href="https://operacion.choucairtesting.com/academy/mod/resource/view.php?id=3039"><img src="https://operacion.choucairtesting.com/academy/theme/image.php/fordson/core/1629813408/f/pdf" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true"><span class="instancename">BDD7  - Usando My Extra     (*)<span class="accesshide "> Archivo</span></span></a></div><div class="actions"><span class="autocompletion"><img class="icon " title="Sin finalizar: BDD7  - Usando My Extra     (*)" alt="Sin finalizar: BDD7  - Usando My Extra     (*)" src="https://operacion.choucairtesting.com/academy/theme/image.php/fordson/core/1629813408/i/completion-auto-n"></span></div><div class="contentafterlink"><div class="no-overflow"><div class="no-overflow"><p align="left">IDE del capítulo, en el caso que se tenga acceso al terminal de IBM (Personal Comunications y/o MyExtra) hay que desarrollar el tema. Esto nos permitirá interactuar con la terminales y obtener o ingresar los datos que sean necesarios para verificaciones posteriores, ya sea en base de datos u otros aplicativos.</p></div></div></div></div></div></div></li><li class="activity resource modtype_resource " id="module-3040"><div><div class="mod-indent-outer w-100"><div class="mod-indent"></div><div><div class="activityinstance"><a class="aalink" onclick="window.open('https://operacion.choucairtesting.com/academy/mod/resource/view.php?id=3040&amp;redirect=1', '', 'width=620,height=450,toolbar=no,location=no,menubar=no,copyhistory=no,status=no,directories=no,scrollbars=yes,resizable=yes'); return false;" href="https://operacion.choucairtesting.com/academy/mod/resource/view.php?id=3040"><img src="https://operacion.choucairtesting.com/academy/theme/image.php/fordson/core/1629813408/f/pdf" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true"><span class="instancename">BDD 8 - Control de Versiones Git, Bitbucket<span class="accesshide "> Archivo</span></span></a></div><div class="actions"><span class="autocompletion"><img class="icon " title="Sin finalizar: BDD 8 - Control de Versiones Git, Bitbucket" alt="Sin finalizar: BDD 8 - Control de Versiones Git, Bitbucket" src="https://operacion.choucairtesting.com/academy/theme/image.php/fordson/core/1629813408/i/completion-auto-n"></span></div><div class="contentafterlink"><div class="no-overflow"><div class="no-overflow"><p><br></p></div></div></div></div></div></div></li></ul></div></li><li id="section-2" class="section main clearfix" role="region" aria-labelledby="sectionid-810-title" data-sectionid="2" data-sectionreturnid="0"><div class="left side"></div><div class="right side"><img class="icon spacer" width="1" height="1" alt="" aria-hidden="true" src="https://operacion.choucairtesting.com/academy/theme/image.php/fordson/core/1629813408/spacer"></div><div class="content"><h3 id="sectionid-810-title" class="sectionname"><span><a href="https://operacion.choucairtesting.com/academy/course/view.php?id=1246#section-2">Retos Técnicos</a></span></h3><div class="section_availability"></div><div class="summary"></div><ul class="section img-text"><li class="activity folder modtype_folder " id="module-3041"><div><div class="mod-indent-outer w-100"><div class="mod-indent"></div><div><div class="contentwithoutlink "><div class="box generalbox pt-0 pb-3 foldertree"><div id="folder_tree0" class="filemanager"><div class="ygtvitem" id="ygtv0"><div class="ygtvchildren" id="ygtvc0"><div class="ygtvitem" id="ygtv1"><table id="ygtvtableel1" border="0" cellpadding="0" cellspacing="0" class="ygtvtable ygtvdepth0 ygtv-expanded ygtv-highlight0"><tbody><tr class="ygtvrow"><td id="ygtvt1" class="ygtvcell ygtvlm"><a href="#" class="ygtvspacer">&nbsp;</a></td><td id="ygtvcontentel1" class="ygtvcell ygtvhtml ygtvcontent"><div class="fp-filename-icon"><span class="fp-icon"><img class="icon " alt="Retos Automatización - Ejercicios prácticos" title="Retos Automatización - Ejercicios prácticos" src="https://operacion.choucairtesting.com/academy/theme/image.php/fordson/core/1629813408/f/folder"></span><span class="fp-filename">Retos Automatización - Ejercicios prácticos</span></div></td></tr></tbody></table><div class="ygtvchildren" id="ygtvc1"><div class="ygtvitem" id="ygtv2"><table id="ygtvtableel2" border="0" cellpadding="0" cellspacing="0" class="ygtvtable ygtvdepth1 ygtv-expanded ygtv-highlight0"><tbody><tr class="ygtvrow"><td class="ygtvcell ygtvblankdepthcell"><div class="ygtvspacer"></div></td><td id="ygtvt2" class="ygtvcell ygtvtn"><a href="#" class="ygtvspacer">&nbsp;</a></td><td id="ygtvcontentel2" class="ygtvcell ygtvhtml ygtvcontent"><span class="fp-filename-icon"><a href="https://operacion.choucairtesting.com/academy/pluginfile.php/13075/mod_folder/content/0/BDD%20Reto%201_01%20-%20Automatizacion%20Web%20-%20BDD.DOCX?forcedownload=1"><span class="fp-icon"><img class="icon " alt="BDD Reto 1_01 - Automatizacion Web - BDD.DOCX" title="BDD Reto 1_01 - Automatizacion Web - BDD.DOCX" src="https://operacion.choucairtesting.com/academy/theme/image.php/fordson/core/1629813408/f/document"></span><span class="fp-filename">BDD Reto 1_01 - Automatizacion Web - BDD.DOCX</span></a></span></td></tr></tbody></table><div class="ygtvchildren" id="ygtvc2" style="display:none;"></div></div><div class="ygtvitem" id="ygtv3"><table id="ygtvtableel3" border="0" cellpadding="0" cellspacing="0" class="ygtvtable ygtvdepth1 ygtv-expanded ygtv-highlight0"><tbody><tr class="ygtvrow"><td class="ygtvcell ygtvblankdepthcell"><div class="ygtvspacer"></div></td><td id="ygtvt3" class="ygtvcell ygtvtn"><a href="#" class="ygtvspacer">&nbsp;</a></td><td id="ygtvcontentel3" class="ygtvcell ygtvhtml ygtvcontent"><span class="fp-filename-icon"><a href="https://operacion.choucairtesting.com/academy/pluginfile.php/13075/mod_folder/content/0/BDD%20Reto%201_02%20-%20Automatizacion%20Web%20-%20BDD.DOCX?forcedownload=1"><span class="fp-icon"><img class="icon " alt="BDD Reto 1_02 - Automatizacion Web - BDD.DOCX" title="BDD Reto 1_02 - Automatizacion Web - BDD.DOCX" src="https://operacion.choucairtesting.com/academy/theme/image.php/fordson/core/1629813408/f/document"></span><span class="fp-filename">BDD Reto 1_02 - Automatizacion Web - BDD.DOCX</span></a></span></td></tr></tbody></table><div class="ygtvchildren" id="ygtvc3" style="display:none;"></div></div><div class="ygtvitem" id="ygtv4"><table id="ygtvtableel4" border="0" cellpadding="0" cellspacing="0" class="ygtvtable ygtvdepth1 ygtv-expanded ygtv-highlight0"><tbody><tr class="ygtvrow"><td class="ygtvcell ygtvblankdepthcell"><div class="ygtvspacer"></div></td><td id="ygtvt4" class="ygtvcell ygtvtn"><a href="#" class="ygtvspacer">&nbsp;</a></td><td id="ygtvcontentel4" class="ygtvcell ygtvhtml ygtvcontent"><span class="fp-filename-icon"><a href="https://operacion.choucairtesting.com/academy/pluginfile.php/13075/mod_folder/content/0/BDD%20Reto%202_01%20-%20Automatizacion%20Web.docx?forcedownload=1"><span class="fp-icon"><img class="icon " alt="BDD Reto 2_01 - Automatizacion Web.docx" title="BDD Reto 2_01 - Automatizacion Web.docx" src="https://operacion.choucairtesting.com/academy/theme/image.php/fordson/core/1629813408/f/document"></span><span class="fp-filename">BDD Reto 2_01 - Automatizacion Web.docx</span></a></span></td></tr></tbody></table><div class="ygtvchildren" id="ygtvc4" style="display:none;"></div></div><div class="ygtvitem" id="ygtv5"><table id="ygtvtableel5" border="0" cellpadding="0" cellspacing="0" class="ygtvtable ygtvdepth1 ygtv-expanded ygtv-highlight0"><tbody><tr class="ygtvrow"><td class="ygtvcell ygtvblankdepthcell"><div class="ygtvspacer"></div></td><td id="ygtvt5" class="ygtvcell ygtvtn"><a href="#" class="ygtvspacer">&nbsp;</a></td><td id="ygtvcontentel5" class="ygtvcell ygtvhtml ygtvcontent"><span class="fp-filename-icon"><a href="https://operacion.choucairtesting.com/academy/pluginfile.php/13075/mod_folder/content/0/BDD%20Reto%202_02%20-%20Automatizacion%20Web.docx?forcedownload=1"><span class="fp-icon"><img class="icon " alt="BDD Reto 2_02 - Automatizacion Web.docx" title="BDD Reto 2_02 - Automatizacion Web.docx" src="https://operacion.choucairtesting.com/academy/theme/image.php/fordson/core/1629813408/f/document"></span><span class="fp-filename">BDD Reto 2_02 - Automatizacion Web.docx</span></a></span></td></tr></tbody></table><div class="ygtvchildren" id="ygtvc5" style="display:none;"></div></div><div class="ygtvitem" id="ygtv6"><table id="ygtvtableel6" border="0" cellpadding="0" cellspacing="0" class="ygtvtable ygtvdepth1 ygtv-expanded ygtv-highlight0"><tbody><tr class="ygtvrow"><td class="ygtvcell ygtvblankdepthcell"><div class="ygtvspacer"></div></td><td id="ygtvt6" class="ygtvcell ygtvtn"><a href="#" class="ygtvspacer">&nbsp;</a></td><td id="ygtvcontentel6" class="ygtvcell ygtvhtml ygtvcontent"><span class="fp-filename-icon"><a href="https://operacion.choucairtesting.com/academy/pluginfile.php/13075/mod_folder/content/0/BDD%20Reto%202_03%20-%20Automatizacion%20Web.docx?forcedownload=1"><span class="fp-icon"><img class="icon " alt="BDD Reto 2_03 - Automatizacion Web.docx" title="BDD Reto 2_03 - Automatizacion Web.docx" src="https://operacion.choucairtesting.com/academy/theme/image.php/fordson/core/1629813408/f/document"></span><span class="fp-filename">BDD Reto 2_03 - Automatizacion Web.docx</span></a></span></td></tr></tbody></table><div class="ygtvchildren" id="ygtvc6" style="display:none;"></div></div><div class="ygtvitem" id="ygtv7"><table id="ygtvtableel7" border="0" cellpadding="0" cellspacing="0" class="ygtvtable ygtvdepth1 ygtv-expanded ygtv-highlight0"><tbody><tr class="ygtvrow"><td class="ygtvcell ygtvblankdepthcell"><div class="ygtvspacer"></div></td><td id="ygtvt7" class="ygtvcell ygtvtn"><a href="#" class="ygtvspacer">&nbsp;</a></td><td id="ygtvcontentel7" class="ygtvcell ygtvhtml ygtvcontent"><span class="fp-filename-icon"><a href="https://operacion.choucairtesting.com/academy/pluginfile.php/13075/mod_folder/content/0/BDD%20Reto%203_01%20-%20Automatizacion%20Web.docx?forcedownload=1"><span class="fp-icon"><img class="icon " alt="BDD Reto 3_01 - Automatizacion Web.docx" title="BDD Reto 3_01 - Automatizacion Web.docx" src="https://operacion.choucairtesting.com/academy/theme/image.php/fordson/core/1629813408/f/document"></span><span class="fp-filename">BDD Reto 3_01 - Automatizacion Web.docx</span></a></span></td></tr></tbody></table><div class="ygtvchildren" id="ygtvc7" style="display:none;"></div></div><div class="ygtvitem" id="ygtv8"><table id="ygtvtableel8" border="0" cellpadding="0" cellspacing="0" class="ygtvtable ygtvdepth1 ygtv-expanded ygtv-highlight0"><tbody><tr class="ygtvrow"><td class="ygtvcell ygtvblankdepthcell"><div class="ygtvspacer"></div></td><td id="ygtvt8" class="ygtvcell ygtvtn"><a href="#" class="ygtvspacer">&nbsp;</a></td><td id="ygtvcontentel8" class="ygtvcell ygtvhtml ygtvcontent"><span class="fp-filename-icon"><a href="https://operacion.choucairtesting.com/academy/pluginfile.php/13075/mod_folder/content/0/BDD%20Reto%203_01_1%20-%20Automatizacion%20Web.docx?forcedownload=1"><span class="fp-icon"><img class="icon " alt="BDD Reto 3_01_1 - Automatizacion Web.docx" title="BDD Reto 3_01_1 - Automatizacion Web.docx" src="https://operacion.choucairtesting.com/academy/theme/image.php/fordson/core/1629813408/f/document"></span><span class="fp-filename">BDD Reto 3_01_1 - Automatizacion Web.docx</span></a></span></td></tr></tbody></table><div class="ygtvchildren" id="ygtvc8" style="display:none;"></div></div><div class="ygtvitem" id="ygtv9"><table id="ygtvtableel9" border="0" cellpadding="0" cellspacing="0" class="ygtvtable ygtvdepth1 ygtv-expanded ygtv-highlight0"><tbody><tr class="ygtvrow"><td class="ygtvcell ygtvblankdepthcell"><div class="ygtvspacer"></div></td><td id="ygtvt9" class="ygtvcell ygtvtn"><a href="#" class="ygtvspacer">&nbsp;</a></td><td id="ygtvcontentel9" class="ygtvcell ygtvhtml ygtvcontent"><span class="fp-filename-icon"><a href="https://operacion.choucairtesting.com/academy/pluginfile.php/13075/mod_folder/content/0/BDD%20Reto%204_01%20-%20Automatizacion%20Web.docx?forcedownload=1"><span class="fp-icon"><img class="icon " alt="BDD Reto 4_01 - Automatizacion Web.docx" title="BDD Reto 4_01 - Automatizacion Web.docx" src="https://operacion.choucairtesting.com/academy/theme/image.php/fordson/core/1629813408/f/document"></span><span class="fp-filename">BDD Reto 4_01 - Automatizacion Web.docx</span></a></span></td></tr></tbody></table><div class="ygtvchildren" id="ygtvc9" style="display:none;"></div></div><div class="ygtvitem" id="ygtv10"><table id="ygtvtableel10" border="0" cellpadding="0" cellspacing="0" class="ygtvtable ygtvdepth1 ygtv-expanded ygtv-highlight0"><tbody><tr class="ygtvrow"><td class="ygtvcell ygtvblankdepthcell"><div class="ygtvspacer"></div></td><td id="ygtvt10" class="ygtvcell ygtvtn"><a href="#" class="ygtvspacer">&nbsp;</a></td><td id="ygtvcontentel10" class="ygtvcell ygtvhtml ygtvcontent"><span class="fp-filename-icon"><a href="https://operacion.choucairtesting.com/academy/pluginfile.php/13075/mod_folder/content/0/BDD%20Reto%206_00%20-%20Automatizacion%20Web.docx?forcedownload=1"><span class="fp-icon"><img class="icon " alt="BDD Reto 6_00 - Automatizacion Web.docx" title="BDD Reto 6_00 - Automatizacion Web.docx" src="https://operacion.choucairtesting.com/academy/theme/image.php/fordson/core/1629813408/f/document"></span><span class="fp-filename">BDD Reto 6_00 - Automatizacion Web.docx</span></a></span></td></tr></tbody></table><div class="ygtvchildren" id="ygtvc10" style="display:none;"></div></div><div class="ygtvitem" id="ygtv11"><table id="ygtvtableel11" border="0" cellpadding="0" cellspacing="0" class="ygtvtable ygtvdepth1 ygtv-expanded ygtv-highlight0"><tbody><tr class="ygtvrow"><td class="ygtvcell ygtvblankdepthcell"><div class="ygtvspacer"></div></td><td id="ygtvt11" class="ygtvcell ygtvtn"><a href="#" class="ygtvspacer">&nbsp;</a></td><td id="ygtvcontentel11" class="ygtvcell ygtvhtml ygtvcontent"><span class="fp-filename-icon"><a href="https://operacion.choucairtesting.com/academy/pluginfile.php/13075/mod_folder/content/0/BDD%20Reto%207_00%20-%20Automatizacion%20Web.pdf?forcedownload=1"><span class="fp-icon"><img class="icon " alt="BDD Reto 7_00 - Automatizacion Web.pdf" title="BDD Reto 7_00 - Automatizacion Web.pdf" src="https://operacion.choucairtesting.com/academy/theme/image.php/fordson/core/1629813408/f/pdf"></span><span class="fp-filename">BDD Reto 7_00 - Automatizacion Web.pdf</span></a></span></td></tr></tbody></table><div class="ygtvchildren" id="ygtvc11" style="display:none;"></div></div><div class="ygtvitem" id="ygtv12"><table id="ygtvtableel12" border="0" cellpadding="0" cellspacing="0" class="ygtvtable ygtvdepth1 ygtv-expanded ygtv-highlight0"><tbody><tr class="ygtvrow"><td class="ygtvcell ygtvblankdepthcell"><div class="ygtvspacer"></div></td><td id="ygtvt12" class="ygtvcell ygtvtn"><a href="#" class="ygtvspacer">&nbsp;</a></td><td id="ygtvcontentel12" class="ygtvcell ygtvhtml ygtvcontent"><span class="fp-filename-icon"><a href="https://operacion.choucairtesting.com/academy/pluginfile.php/13075/mod_folder/content/0/BDD%20Reto%208_00%20-%20Automatizacion%20Web.pdf?forcedownload=1"><span class="fp-icon"><img class="icon " alt="BDD Reto 8_00 - Automatizacion Web.pdf" title="BDD Reto 8_00 - Automatizacion Web.pdf" src="https://operacion.choucairtesting.com/academy/theme/image.php/fordson/core/1629813408/f/pdf"></span><span class="fp-filename">BDD Reto 8_00 - Automatizacion Web.pdf</span></a></span></td></tr></tbody></table><div class="ygtvchildren" id="ygtvc12" style="display:none;"></div></div><div class="ygtvitem" id="ygtv13"><table id="ygtvtableel13" border="0" cellpadding="0" cellspacing="0" class="ygtvtable ygtvdepth1 ygtv-expanded ygtv-highlight0"><tbody><tr class="ygtvrow"><td class="ygtvcell ygtvblankdepthcell"><div class="ygtvspacer"></div></td><td id="ygtvt13" class="ygtvcell ygtvln"><a href="#" class="ygtvspacer">&nbsp;</a></td><td id="ygtvcontentel13" class="ygtvcell ygtvhtml ygtvcontent"><span class="fp-filename-icon"><a href="https://operacion.choucairtesting.com/academy/pluginfile.php/13075/mod_folder/content/0/BDD%20Reto%209_00%20-%20Automatizacion%20Web.docx?forcedownload=1"><span class="fp-icon"><img class="icon " alt="BDD Reto 9_00 - Automatizacion Web.docx" title="BDD Reto 9_00 - Automatizacion Web.docx" src="https://operacion.choucairtesting.com/academy/theme/image.php/fordson/core/1629813408/f/document"></span><span class="fp-filename">BDD Reto 9_00 - Automatizacion Web.docx</span></a></span></td></tr></tbody></table><div class="ygtvchildren" id="ygtvc13" style="display:none;"></div></div></div></div></div></div></div></div><div class="box generalbox pt-0 pb-3 folderbuttons"><div class="singlebutton">
+    <form method="post" action="https://operacion.choucairtesting.com/academy/mod/folder/download_folder.php">
+            <input type="hidden" name="id" value="3041">
+            <input type="hidden" name="sesskey" value="eAzyxaTgoA">
+        <button type="submit" class="btn btn-secondary" id="single_button6140d4c331d5e16" title="">Descargar carpeta</button>
+    </form>
+</div></div></div></div></div></div></li><li class="activity folder modtype_folder " id="module-3042"><div><div class="mod-indent-outer w-100"><div class="mod-indent"></div><div><div class="contentwithoutlink "><div class="box generalbox pt-0 pb-3 foldertree"><div id="folder_tree1" class="filemanager"><div class="ygtvitem" id="ygtv14"><div class="ygtvchildren" id="ygtvc14"><div class="ygtvitem" id="ygtv15"><table id="ygtvtableel15" border="0" cellpadding="0" cellspacing="0" class="ygtvtable ygtvdepth0 ygtv-expanded ygtv-highlight0"><tbody><tr class="ygtvrow"><td id="ygtvt15" class="ygtvcell ygtvlm"><a href="#" class="ygtvspacer">&nbsp;</a></td><td id="ygtvcontentel15" class="ygtvcell ygtvhtml ygtvcontent"><div class="fp-filename-icon"><span class="fp-icon"><img class="icon " alt="Retos Automatización Screenplay - Ejercicios prácticos" title="Retos Automatización Screenplay - Ejercicios prácticos" src="https://operacion.choucairtesting.com/academy/theme/image.php/fordson/core/1629813408/f/folder"></span><span class="fp-filename">Retos Automatización Screenplay - Ejercicios prácticos</span></div></td></tr></tbody></table><div class="ygtvchildren" id="ygtvc15"><div class="ygtvitem" id="ygtv16"><table id="ygtvtableel16" border="0" cellpadding="0" cellspacing="0" class="ygtvtable ygtvdepth1 ygtv-expanded ygtv-highlight0"><tbody><tr class="ygtvrow"><td class="ygtvcell ygtvblankdepthcell"><div class="ygtvspacer"></div></td><td id="ygtvt16" class="ygtvcell ygtvtn"><a href="#" class="ygtvspacer">&nbsp;</a></td><td id="ygtvcontentel16" class="ygtvcell ygtvhtml ygtvcontent"><span class="fp-filename-icon"><a href="https://operacion.choucairtesting.com/academy/pluginfile.php/13076/mod_folder/content/0/Serenity%20Screenplay%201_00%20-%20Automatizacion%20Web.docx?forcedownload=1"><span class="fp-icon"><img class="icon " alt="Serenity Screenplay 1_00 - Automatizacion Web.docx" title="Serenity Screenplay 1_00 - Automatizacion Web.docx" src="https://operacion.choucairtesting.com/academy/theme/image.php/fordson/core/1629813408/f/document"></span><span class="fp-filename">Serenity Screenplay 1_00 - Automatizacion Web.docx</span></a></span></td></tr></tbody></table><div class="ygtvchildren" id="ygtvc16" style="display:none;"></div></div><div class="ygtvitem" id="ygtv17"><table id="ygtvtableel17" border="0" cellpadding="0" cellspacing="0" class="ygtvtable ygtvdepth1 ygtv-expanded ygtv-highlight0"><tbody><tr class="ygtvrow"><td class="ygtvcell ygtvblankdepthcell"><div class="ygtvspacer"></div></td><td id="ygtvt17" class="ygtvcell ygtvtn"><a href="#" class="ygtvspacer">&nbsp;</a></td><td id="ygtvcontentel17" class="ygtvcell ygtvhtml ygtvcontent"><span class="fp-filename-icon"><a href="https://operacion.choucairtesting.com/academy/pluginfile.php/13076/mod_folder/content/0/Serenity%20Screenplay%202_00%20-%20Automatizacion%20Web.docx?forcedownload=1"><span class="fp-icon"><img class="icon " alt="Serenity Screenplay 2_00 - Automatizacion Web.docx" title="Serenity Screenplay 2_00 - Automatizacion Web.docx" src="https://operacion.choucairtesting.com/academy/theme/image.php/fordson/core/1629813408/f/document"></span><span class="fp-filename">Serenity Screenplay 2_00 - Automatizacion Web.docx</span></a></span></td></tr></tbody></table><div class="ygtvchildren" id="ygtvc17" style="display:none;"></div></div><div class="ygtvitem" id="ygtv18"><table id="ygtvtableel18" border="0" cellpadding="0" cellspacing="0" class="ygtvtable ygtvdepth1 ygtv-expanded ygtv-highlight0"><tbody><tr class="ygtvrow"><td class="ygtvcell ygtvblankdepthcell"><div class="ygtvspacer"></div></td><td id="ygtvt18" class="ygtvcell ygtvln"><a href="#" class="ygtvspacer">&nbsp;</a></td><td id="ygtvcontentel18" class="ygtvcell ygtvhtml ygtvcontent"><span class="fp-filename-icon"><a href="https://operacion.choucairtesting.com/academy/pluginfile.php/13076/mod_folder/content/0/Serenity%20Screenplay%203_00%20-%20Automatizacion%20Web.docx?forcedownload=1"><span class="fp-icon"><img class="icon " alt="Serenity Screenplay 3_00 - Automatizacion Web.docx" title="Serenity Screenplay 3_00 - Automatizacion Web.docx" src="https://operacion.choucairtesting.com/academy/theme/image.php/fordson/core/1629813408/f/document"></span><span class="fp-filename">Serenity Screenplay 3_00 - Automatizacion Web.docx</span></a></span></td></tr></tbody></table><div class="ygtvchildren" id="ygtvc18" style="display:none;"></div></div></div></div></div></div></div></div><div class="box generalbox pt-0 pb-3 folderbuttons"><div class="singlebutton">
+    <form method="post" action="https://operacion.choucairtesting.com/academy/mod/folder/download_folder.php">
+            <input type="hidden" name="id" value="3042">
+            <input type="hidden" name="sesskey" value="eAzyxaTgoA">
+        <button type="submit" class="btn btn-secondary" id="single_button6140d4c331d5e18" title="">Descargar carpeta</button>
+    </form>
+</div></div></div></div></div></div></li></ul></div></li></ul></div></div>
+                                
+
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="drawer-6140d4c36f66d6140d4c331d5e14" class=" drawer bg-white hidden" aria-expanded="false" aria-hidden="true" data-region="right-hand-drawer" role="region" tabindex="0">
+            <div id="message-drawer-6140d4c36f66d6140d4c331d5e14" class="message-app" data-region="message-drawer" role="region">
+            <div class="closewidget bg-light border-bottom text-right">
+                <a class="text-dark" data-action="closedrawer" href="#">
+                     <i class="icon fa fa-window-close fa-fw " title="Cerrar" aria-label="Cerrar"></i>
+                </a>
+            </div>
+            <div class="header-container position-relative" data-region="header-container">
+                <div class="hidden border-bottom px-2 py-3" aria-hidden="true" data-region="view-contacts">
+                    <div class="d-flex align-items-center">
+                        <div class="align-self-stretch">
+                            <a class="h-100 d-flex align-items-center mr-2" href="#" data-route-back="" role="button">
+                                <div class="icon-back-in-drawer">
+                                    <span class="dir-rtl-hide"><i class="icon fa fa-chevron-left fa-fw " aria-hidden="true"></i></span>
+                                    <span class="dir-ltr-hide"><i class="icon fa fa-chevron-right fa-fw " aria-hidden="true"></i></span>
+                                </div>
+                                <div class="icon-back-in-app">
+                                    <span class="dir-rtl-hide"><i class="icon fa fa-times fa-fw " aria-hidden="true"></i></span>
+                                </div>                            </a>
+                        </div>
+                        <div>
+                            Contactos
+                        </div>
+                        <div class="ml-auto">
+                            <a href="#" data-route="view-search" role="button" aria-label="Búsqueda">
+                                <i class="icon fa fa-search fa-fw " aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>                
+                <div class="hidden bg-white position-relative border-bottom p-1 p-sm-2" aria-hidden="true" data-region="view-conversation">
+                    <div class="hidden" data-region="header-content"></div>
+                    <div class="hidden" data-region="header-edit-mode">
+                        
+                        <div class="d-flex p-2 align-items-center">
+                            Mensajes seleccionados:
+                            <span class="ml-1" data-region="message-selected-court">1</span>
+                            <button type="button" class="ml-auto close" aria-label="Cancelar selección de mensaje" data-action="cancel-edit-mode">
+                                    <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div data-region="header-placeholder">
+                        <div class="d-flex">
+                            <div class="ml-2 rounded-circle bg-pulse-grey align-self-center" style="height: 38px; width: 38px">
+                            </div>
+                            <div class="ml-2 " style="flex: 1">
+                                <div class="mt-1 bg-pulse-grey w-75" style="height: 16px;">
+                                </div>
+                            </div>
+                            <div class="ml-2 bg-pulse-grey align-self-center" style="height: 16px; width: 20px">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hidden position-absolute" data-region="confirm-dialogue-container" style="top: 0; bottom: -1px; right: 0; left: 0; background: rgba(0,0,0,0.3);"></div>
+                </div>                <div class="border-bottom  p-1 px-sm-2 py-sm-3" aria-hidden="false" data-region="view-overview">
+                    <div class="d-flex align-items-center">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text pr-2 bg-white">
+                                    <i class="icon fa fa-search fa-fw " aria-hidden="true"></i>
+                                </span>
+                            </div>
+                            <input type="text" class="form-control border-left-0" placeholder="Búsqueda" aria-label="Búsqueda" data-region="view-overview-search-input">
+                        </div>
+                        <div class="ml-2">
+                            <a href="#" data-route="view-settings" data-route-param="9200" aria-label="Ajustes" role="button">
+                                <i class="icon fa fa-cog fa-fw " aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="text-right mt-sm-3">
+                        <a href="#" data-route="view-contacts" role="button">
+                            <i class="icon fa fa-user fa-fw " aria-hidden="true"></i>
+                            Contactos
+                            <span class="badge badge-primary bg-primary ml-2 hidden" data-region="contact-request-count" aria-label="Hay 0 solicitudes de contacto pendientes">
+                                0
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hidden border-bottom px-2 py-3 view-search" aria-hidden="true" data-region="view-search">
+                    <div class="d-flex align-items-center">
+                        <a class="mr-2 align-self-stretch d-flex align-items-center" href="#" data-route-back="" data-action="cancel-search" role="button">
+                            <div class="icon-back-in-drawer">
+                                <span class="dir-rtl-hide"><i class="icon fa fa-chevron-left fa-fw " aria-hidden="true"></i></span>
+                                <span class="dir-ltr-hide"><i class="icon fa fa-chevron-right fa-fw " aria-hidden="true"></i></span>
+                            </div>
+                            <div class="icon-back-in-app">
+                                <span class="dir-rtl-hide"><i class="icon fa fa-times fa-fw " aria-hidden="true"></i></span>
+                            </div>                        </a>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Búsqueda" aria-label="Búsqueda" data-region="search-input">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" type="button" data-action="search" aria-label="Búsqueda">
+                                    <span data-region="search-icon-container">
+                                        <i class="icon fa fa-search fa-fw " aria-hidden="true"></i>
+                                    </span>
+                                    <span class="hidden" data-region="loading-icon-container">
+                                        <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Enviando" aria-label="Enviando"></i></span>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+                <div class="hidden border-bottom px-2 py-3" aria-hidden="true" data-region="view-settings">
+                    <div class="d-flex align-items-center">
+                        <div class="align-self-stretch">
+                            <a class="h-100 d-flex mr-2 align-items-center" href="#" data-route-back="" role="button">
+                                <div class="icon-back-in-drawer">
+                                    <span class="dir-rtl-hide"><i class="icon fa fa-chevron-left fa-fw " aria-hidden="true"></i></span>
+                                    <span class="dir-ltr-hide"><i class="icon fa fa-chevron-right fa-fw " aria-hidden="true"></i></span>
+                                </div>
+                                <div class="icon-back-in-app">
+                                    <span class="dir-rtl-hide"><i class="icon fa fa-times fa-fw " aria-hidden="true"></i></span>
+                                </div>                            </a>
+                        </div>
+                        <div>
+                            Configuración
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="body-container position-relative" data-region="body-container">
+                
+                <div class="hidden" data-region="view-contact" aria-hidden="true">
+                    <div class="p-2 pt-3" data-region="content-container"></div>
+                </div>                <div class="hidden h-100" data-region="view-contacts" aria-hidden="true" data-user-id="9200">
+                    <div class="d-flex flex-column h-100">
+                        <div class="p-3 border-bottom">
+                            <ul class="nav nav-pills nav-fill" role="tablist">
+                                <li class="nav-item">
+                                    <a id="contacts-tab-6140d4c36f66d6140d4c331d5e14" class="nav-link active" href="#contacts-tab-panel-6140d4c36f66d6140d4c331d5e14" data-toggle="tab" data-action="show-contacts-section" role="tab" aria-controls="contacts-tab-panel-6140d4c36f66d6140d4c331d5e14" aria-selected="true">
+                                        Contactos
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a id="requests-tab-6140d4c36f66d6140d4c331d5e14" class="nav-link" href="#requests-tab-panel-6140d4c36f66d6140d4c331d5e14" data-toggle="tab" data-action="show-requests-section" role="tab" aria-controls="requests-tab-panel-6140d4c36f66d6140d4c331d5e14" aria-selected="false">
+                                        Peticiones
+                                        <span class="badge badge-primary bg-primary ml-2 hidden" data-region="contact-request-count" aria-label="Hay 0 solicitudes de contacto pendientes">
+                                            0
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-content d-flex flex-column h-100">
+                                            <div class="tab-pane fade show active h-100 lazy-load-list" aria-live="polite" data-region="lazy-load-list" data-user-id="9200" id="contacts-tab-panel-6140d4c36f66d6140d4c331d5e14" data-section="contacts" role="tabpanel" aria-labelledby="contacts-tab-6140d4c36f66d6140d4c331d5e14">
+                    
+                    <div class="hidden text-center p-2" data-region="empty-message-container">
+                        No hay contactos
+                    </div>
+                    <div class="hidden list-group" data-region="content-container">
+                        
+                    </div>
+                    <div class="list-group" data-region="placeholder-container">
+                        
+                    </div>
+                    <div class="w-100 text-center p-3 hidden" data-region="loading-icon-container">
+                        <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Enviando" aria-label="Enviando"></i></span>
+                    </div>
+                </div>
+                
+                                            <div class="tab-pane fade h-100 lazy-load-list" aria-live="polite" data-region="lazy-load-list" data-user-id="9200" id="requests-tab-panel-6140d4c36f66d6140d4c331d5e14" data-section="requests" role="tabpanel" aria-labelledby="requests-tab-6140d4c36f66d6140d4c331d5e14">
+                    
+                    <div class="hidden text-center p-2" data-region="empty-message-container">
+                        No hay solicitudes de contacto
+                    </div>
+                    <div class="hidden list-group" data-region="content-container">
+                        
+                    </div>
+                    <div class="list-group" data-region="placeholder-container">
+                        
+                    </div>
+                    <div class="w-100 text-center p-3 hidden" data-region="loading-icon-container">
+                        <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Enviando" aria-label="Enviando"></i></span>
+                    </div>
+                </div>
+                        </div>
+                    </div>
+                </div>                
+                <div class="view-conversation hidden h-100" aria-hidden="true" data-region="view-conversation" data-user-id="9200" data-midnight="1631595600" data-message-poll-min="10" data-message-poll-max="120" data-message-poll-after-max="300" style="overflow-y: auto; overflow-x: hidden">
+                    <div class="position-relative h-100" data-region="content-container" style="overflow-y: auto; overflow-x: hidden">
+                        <div class="content-message-container hidden h-100 px-2 pt-0" data-region="content-message-container" role="log" style="overflow-y: auto; overflow-x: hidden">
+                            <div class="py-3 sticky-top z-index-1 border-bottom text-center hidden" data-region="contact-request-sent-message-container">
+                                <p class="m-0">Solicitud de contacto enviada</p>
+                                <p class="font-italic font-weight-light" data-region="text"></p>
+                            </div>
+                            <div class="p-3 text-center hidden" data-region="self-conversation-message-container">
+                                <p class="m-0">Espacio personal</p>
+                                <p class="font-italic font-weight-light" data-region="text">Guardar borradores de mensajes, notas, etc, para acceder a ellos más tarde.</p>
+                           </div>
+                            <div class="hidden text-center p-3" data-region="more-messages-loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Enviando" aria-label="Enviando"></i></span>
+</div>
+                        </div>
+                        <div class="p-4 w-100 h-100 hidden position-absolute" data-region="confirm-dialogue-container" style="top: 0; background: rgba(0,0,0,0.3);">
+                            
+                            <div class="p-3 bg-white" data-region="confirm-dialogue" role="alert">
+                                <p class="text-muted" data-region="dialogue-text"></p>
+                                <div class="mb-2 custom-control custom-checkbox hidden" data-region="delete-messages-for-all-users-toggle-container">
+                                    <input type="checkbox" class="custom-control-input" id="delete-messages-for-all-users" data-region="delete-messages-for-all-users-toggle">
+                                    <label class="custom-control-label text-muted" for="delete-messages-for-all-users">
+                                        Borrar para mí y para todos los demás
+                                    </label>
+                                </div>
+                                <button type="button" class="btn btn-primary btn-block hidden" data-action="confirm-block">
+                                    <span data-region="dialogue-button-text">Bloque</span>
+                                    <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Enviando" aria-label="Enviando"></i></span>
+</span>
+                                </button>
+                                <button type="button" class="btn btn-primary btn-block hidden" data-action="confirm-unblock">
+                                    <span data-region="dialogue-button-text">Desbloquear</span>
+                                    <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Enviando" aria-label="Enviando"></i></span>
+</span>
+                                </button>
+                                <button type="button" class="btn btn-primary btn-block hidden" data-action="confirm-remove-contact">
+                                    <span data-region="dialogue-button-text">Quitar</span>
+                                    <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Enviando" aria-label="Enviando"></i></span>
+</span>
+                                </button>
+                                <button type="button" class="btn btn-primary btn-block hidden" data-action="confirm-add-contact">
+                                    <span data-region="dialogue-button-text">Agregar</span>
+                                    <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Enviando" aria-label="Enviando"></i></span>
+</span>
+                                </button>
+                                <button type="button" class="btn btn-primary btn-block hidden" data-action="confirm-delete-selected-messages">
+                                    <span data-region="dialogue-button-text">Borrar</span>
+                                    <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Enviando" aria-label="Enviando"></i></span>
+</span>
+                                </button>
+                                <button type="button" class="btn btn-primary btn-block hidden" data-action="confirm-delete-conversation">
+                                    <span data-region="dialogue-button-text">Borrar</span>
+                                    <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Enviando" aria-label="Enviando"></i></span>
+</span>
+                                </button>
+                                <button type="button" class="btn btn-primary btn-block hidden" data-action="request-add-contact">
+                                    <span data-region="dialogue-button-text">Enviar solicitud de contacto</span>
+                                    <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Enviando" aria-label="Enviando"></i></span>
+</span>
+                                </button>
+                                <button type="button" class="btn btn-primary btn-block hidden" data-action="accept-contact-request">
+                                    <span data-region="dialogue-button-text">Aceptar y añadir a los contactos</span>
+                                    <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Enviando" aria-label="Enviando"></i></span>
+</span>
+                                </button>
+                                <button type="button" class="btn btn-secondary btn-block hidden" data-action="decline-contact-request">
+                                    <span data-region="dialogue-button-text">Rechazar</span>
+                                    <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Enviando" aria-label="Enviando"></i></span>
+</span>
+                                </button>
+                                <button type="button" class="btn btn-primary btn-block" data-action="okay-confirm">OK</button>
+                                <button type="button" class="btn btn-secondary btn-block" data-action="cancel-confirm">Cancelar</button>
+                            </div>
+                        </div>
+                        <div class="px-2 pb-2 pt-0" data-region="content-placeholder">
+                            <div class="h-100 d-flex flex-column">
+                                <div class="px-2 pb-2 pt-0 bg-light h-100" style="overflow-y: auto">
+                                    <div class="mt-4">
+                                        <div class="mb-4">
+                                            <div class="mx-auto bg-white" style="height: 25px; width: 100px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                    </div>                                    <div class="mt-4">
+                                        <div class="mb-4">
+                                            <div class="mx-auto bg-white" style="height: 25px; width: 100px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                    </div>                                    <div class="mt-4">
+                                        <div class="mb-4">
+                                            <div class="mx-auto bg-white" style="height: 25px; width: 100px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                    </div>                                    <div class="mt-4">
+                                        <div class="mb-4">
+                                            <div class="mx-auto bg-white" style="height: 25px; width: 100px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                    </div>                                    <div class="mt-4">
+                                        <div class="mb-4">
+                                            <div class="mx-auto bg-white" style="height: 25px; width: 100px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                    </div>                                </div>
+                            </div>                        </div>
+                    </div>
+                </div>
+                
+                <div class="hidden" aria-hidden="true" data-region="view-group-info">
+                    <div class="pt-3 h-100 d-flex flex-column" data-region="group-info-content-container" style="overflow-y: auto"></div>
+                </div>                <div class="h-100 view-overview-body" aria-hidden="false" data-region="view-overview" data-user-id="9200">
+                    <div id="message-drawer-view-overview-container-6140d4c36f66d6140d4c331d5e14" class="d-flex flex-column h-100" style="overflow-y: auto">
+                            
+                            
+                            <div class="section border-0 card" data-region="view-overview-favourites">
+                                <div id="view-overview-favourites-toggle" class="card-header p-0" data-region="toggle">
+                                    <button class="btn btn-link w-100 text-left p-1 p-sm-2 d-flex align-items-center overview-section-toggle collapsed" data-toggle="collapse" data-target="#view-overview-favourites-target-6140d4c36f66d6140d4c331d5e14" aria-expanded="false" aria-controls="view-overview-favourites-target-6140d4c36f66d6140d4c331d5e14">
+                                        <span class="collapsed-icon-container">
+                                            <i class="icon fa fa-caret-right fa-fw " aria-hidden="true"></i>
+                                        </span>
+                                        <span class="expanded-icon-container">
+                                            <i class="icon fa fa-caret-down fa-fw " aria-hidden="true"></i>
+                                        </span>
+                                        <span class="font-weight-bold">Destacados</span>
+                                        <small class="hidden ml-1" data-region="section-total-count-container" aria-label=" conversaciones en total">
+                                            (<span data-region="section-total-count"></span>)
+                                        </small>
+                                        <span class="hidden ml-2" data-region="loading-icon-container">
+                                            <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Enviando" aria-label="Enviando"></i></span>
+                                        </span>
+                                        <span class="hidden badge badge-pill badge-primary ml-auto bg-primary" data-region="section-unread-count">
+                                            
+                                        </span>
+                                    </button>
+                                </div>
+                                                            <div class="collapse border-bottom  lazy-load-list" aria-live="polite" data-region="lazy-load-list" data-user-id="9200" id="view-overview-favourites-target-6140d4c36f66d6140d4c331d5e14" aria-labelledby="view-overview-favourites-toggle" data-parent="#message-drawer-view-overview-container-6140d4c36f66d6140d4c331d5e14">
+                                
+                                <div class="hidden text-center p-2" data-region="empty-message-container">
+                                            <p class="text-muted mt-2">Sin conversaciones destacadas</p>
+
+                                </div>
+                                <div class="hidden list-group" data-region="content-container">
+                                    
+                                </div>
+                                <div class="list-group" data-region="placeholder-container">
+                                            <div class="text-center py-2"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Enviando" aria-label="Enviando"></i></span>
+</div>
+
+                                </div>
+                                <div class="w-100 text-center p-3 hidden" data-region="loading-icon-container">
+                                    <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Enviando" aria-label="Enviando"></i></span>
+                                </div>
+                            </div>
+                            </div>
+                            
+                            
+                            <div class="section border-0 card" data-region="view-overview-group-messages">
+                                <div id="view-overview-group-messages-toggle" class="card-header p-0" data-region="toggle">
+                                    <button class="btn btn-link w-100 text-left p-1 p-sm-2 d-flex align-items-center overview-section-toggle collapsed" data-toggle="collapse" data-target="#view-overview-group-messages-target-6140d4c36f66d6140d4c331d5e14" aria-expanded="false" aria-controls="view-overview-group-messages-target-6140d4c36f66d6140d4c331d5e14">
+                                        <span class="collapsed-icon-container">
+                                            <i class="icon fa fa-caret-right fa-fw " aria-hidden="true"></i>
+                                        </span>
+                                        <span class="expanded-icon-container">
+                                            <i class="icon fa fa-caret-down fa-fw " aria-hidden="true"></i>
+                                        </span>
+                                        <span class="font-weight-bold">Grupo</span>
+                                        <small class="hidden ml-1" data-region="section-total-count-container" aria-label=" conversaciones en total">
+                                            (<span data-region="section-total-count"></span>)
+                                        </small>
+                                        <span class="hidden ml-2" data-region="loading-icon-container">
+                                            <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Enviando" aria-label="Enviando"></i></span>
+                                        </span>
+                                        <span class="hidden badge badge-pill badge-primary ml-auto bg-primary" data-region="section-unread-count">
+                                            
+                                        </span>
+                                    </button>
+                                </div>
+                                                            <div class="collapse border-bottom  lazy-load-list" aria-live="polite" data-region="lazy-load-list" data-user-id="9200" id="view-overview-group-messages-target-6140d4c36f66d6140d4c331d5e14" aria-labelledby="view-overview-group-messages-toggle" data-parent="#message-drawer-view-overview-container-6140d4c36f66d6140d4c331d5e14">
+                                
+                                <div class="hidden text-center p-2" data-region="empty-message-container">
+                                            <p class="text-muted mt-2">No hay conversaciónes de grupo</p>
+
+                                </div>
+                                <div class="hidden list-group" data-region="content-container">
+                                    
+                                </div>
+                                <div class="list-group" data-region="placeholder-container">
+                                            <div class="text-center py-2"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Enviando" aria-label="Enviando"></i></span>
+</div>
+
+                                </div>
+                                <div class="w-100 text-center p-3 hidden" data-region="loading-icon-container">
+                                    <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Enviando" aria-label="Enviando"></i></span>
+                                </div>
+                            </div>
+                            </div>
+                            
+                            
+                            <div class="section border-0 card" data-region="view-overview-messages">
+                                <div id="view-overview-messages-toggle" class="card-header p-0" data-region="toggle">
+                                    <button class="btn btn-link w-100 text-left p-1 p-sm-2 d-flex align-items-center overview-section-toggle collapsed" data-toggle="collapse" data-target="#view-overview-messages-target-6140d4c36f66d6140d4c331d5e14" aria-expanded="false" aria-controls="view-overview-messages-target-6140d4c36f66d6140d4c331d5e14">
+                                        <span class="collapsed-icon-container">
+                                            <i class="icon fa fa-caret-right fa-fw " aria-hidden="true"></i>
+                                        </span>
+                                        <span class="expanded-icon-container">
+                                            <i class="icon fa fa-caret-down fa-fw " aria-hidden="true"></i>
+                                        </span>
+                                        <span class="font-weight-bold">Privado</span>
+                                        <small class="hidden ml-1" data-region="section-total-count-container" aria-label=" conversaciones en total">
+                                            (<span data-region="section-total-count"></span>)
+                                        </small>
+                                        <span class="hidden ml-2" data-region="loading-icon-container">
+                                            <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Enviando" aria-label="Enviando"></i></span>
+                                        </span>
+                                        <span class="hidden badge badge-pill badge-primary ml-auto bg-primary" data-region="section-unread-count">
+                                            
+                                        </span>
+                                    </button>
+                                </div>
+                                                            <div class="collapse border-bottom  lazy-load-list" aria-live="polite" data-region="lazy-load-list" data-user-id="9200" id="view-overview-messages-target-6140d4c36f66d6140d4c331d5e14" aria-labelledby="view-overview-messages-toggle" data-parent="#message-drawer-view-overview-container-6140d4c36f66d6140d4c331d5e14">
+                                
+                                <div class="hidden text-center p-2" data-region="empty-message-container">
+                                            <p class="text-muted mt-2">No hay conversaciones privadas</p>
+
+                                </div>
+                                <div class="hidden list-group" data-region="content-container">
+                                    
+                                </div>
+                                <div class="list-group" data-region="placeholder-container">
+                                            <div class="text-center py-2"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Enviando" aria-label="Enviando"></i></span>
+</div>
+
+                                </div>
+                                <div class="w-100 text-center p-3 hidden" data-region="loading-icon-container">
+                                    <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Enviando" aria-label="Enviando"></i></span>
+                                </div>
+                            </div>
+                            </div>
+                    </div>
+                </div>
+                
+                <div data-region="view-search" aria-hidden="true" class="h-100 hidden" data-user-id="9200" data-users-offset="0" data-messages-offset="0" style="overflow-y: auto">
+                    <div class="hidden" data-region="search-results-container" style="overflow-y: auto">
+                        
+                        <div class="d-flex flex-column">
+                            <div class="mb-3 bg-white" data-region="all-contacts-container">
+                                <div data-region="contacts-container" class="pt-2">
+                                    <h4 class="h6 px-2">Contactos</h4>
+                                    <div class="list-group" data-region="list"></div>
+                                </div>
+                                <div data-region="non-contacts-container" class="pt-2 border-top">
+                                    <h4 class="h6 px-2">No contactos</h4>
+                                    <div class="list-group" data-region="list"></div>
+                                </div>
+                                <div class="text-right">
+                                    <button class="btn btn-link text-primary" data-action="load-more-users">
+                                        <span data-region="button-text">Cargar más</span>
+                                        <span data-region="loading-icon-container" class="hidden"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Enviando" aria-label="Enviando"></i></span>
+</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="bg-white" data-region="messages-container">
+                                <h4 class="h6 px-2 pt-2">Mensajes</h4>
+                                <div class="list-group" data-region="list"></div>
+                                <div class="text-right">
+                                    <button class="btn btn-link text-primary" data-action="load-more-messages">
+                                        <span data-region="button-text">Cargar más</span>
+                                        <span data-region="loading-icon-container" class="hidden"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Enviando" aria-label="Enviando"></i></span>
+</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <p class="hidden p-3 text-center" data-region="no-results-container">No hay resultados</p>
+                        </div>                    </div>
+                    <div class="hidden" data-region="loading-placeholder">
+                        <div class="text-center pt-3 icon-size-4"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Enviando" aria-label="Enviando"></i></span>
+</div>
+                    </div>
+                    <div class="p-3 text-center" data-region="empty-message-container">
+                        <p>Buscar personas y mensajes</p>
+                    </div>
+                </div>                
+                <div class="h-100 hidden bg-white" aria-hidden="true" data-region="view-settings">
+                    <div class="hidden" data-region="content-container">
+                        
+                        <div data-region="settings" class="p-3">
+                            <h3 class="h6 font-weight-bold">Privacidad</h3>
+                            <p>Puedes restringir quién puede enviarte mensajes</p>
+                            <div data-preference="blocknoncontacts" class="mb-3">
+                                <fieldset>
+                                    <legend class="sr-only">Aceptar mensajes desde:</legend>
+                                        <div class="custom-control custom-radio mb-2">
+                                            <input type="radio" name="message_blocknoncontacts" class="custom-control-input" id="block-noncontacts-6140d4c36f66d6140d4c331d5e14-1" value="1">
+                                            <label class="custom-control-label ml-2" for="block-noncontacts-6140d4c36f66d6140d4c331d5e14-1">
+                                                Únicamente mis contactos
+                                            </label>
+                                        </div>
+                                        <div class="custom-control custom-radio mb-2">
+                                            <input type="radio" name="message_blocknoncontacts" class="custom-control-input" id="block-noncontacts-6140d4c36f66d6140d4c331d5e14-0" value="0">
+                                            <label class="custom-control-label ml-2" for="block-noncontacts-6140d4c36f66d6140d4c331d5e14-0">
+                                                Mis contactos y cualquier persona de mis cursos
+                                            </label>
+                                        </div>
+                                </fieldset>
+                            </div>
+                        
+                            <div class="hidden" data-region="notification-preference-container">
+                                <h3 class="mb-2 mt-4 h6 font-weight-bold">Preferencias de notificación</h3>
+                            </div>
+                        
+                            <h3 class="mb-2 mt-4 h6 font-weight-bold">General</h3>
+                            <div data-preference="entertosend">
+                                <div class="custom-control custom-switch">
+                                    <input type="checkbox" class="custom-control-input" id="enter-to-send-6140d4c36f66d6140d4c331d5e14" checked="">
+                                    <label class="custom-control-label" for="enter-to-send-6140d4c36f66d6140d4c331d5e14">
+                                        Usar "intro" para enviar
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-region="placeholder-container">
+                        
+                        <div class="d-flex flex-column p-3">
+                            <div class="w-25 bg-pulse-grey h6" style="height: 18px"></div>
+                            <div class="w-75 bg-pulse-grey mb-4" style="height: 18px"></div>
+                            <div class="mb-3">
+                                <div class="w-100 d-flex mb-3">
+                                    <div class="bg-pulse-grey rounded-circle" style="width: 18px; height: 18px"></div>
+                                    <div class="bg-pulse-grey w-50 ml-2" style="height: 18px"></div>
+                                </div>
+                                <div class="w-100 d-flex mb-3">
+                                    <div class="bg-pulse-grey rounded-circle" style="width: 18px; height: 18px"></div>
+                                    <div class="bg-pulse-grey w-50 ml-2" style="height: 18px"></div>
+                                </div>
+                                <div class="w-100 d-flex mb-3">
+                                    <div class="bg-pulse-grey rounded-circle" style="width: 18px; height: 18px"></div>
+                                    <div class="bg-pulse-grey w-50 ml-2" style="height: 18px"></div>
+                                </div>
+                            </div>
+                            <div class="w-50 bg-pulse-grey h6 mb-3 mt-2" style="height: 18px"></div>
+                            <div class="mb-4">
+                                <div class="w-100 d-flex mb-2 align-items-center">
+                                    <div class="bg-pulse-grey w-25" style="width: 18px; height: 27px"></div>
+                                    <div class="bg-pulse-grey w-25 ml-2" style="height: 18px"></div>
+                                </div>
+                                <div class="w-100 d-flex mb-2 align-items-center">
+                                    <div class="bg-pulse-grey w-25" style="width: 18px; height: 27px"></div>
+                                    <div class="bg-pulse-grey w-25 ml-2" style="height: 18px"></div>
+                                </div>
+                            </div>
+                            <div class="w-25 bg-pulse-grey h6 mb-3 mt-2" style="height: 18px"></div>
+                            <div class="mb-3">
+                                <div class="w-100 d-flex mb-2 align-items-center">
+                                    <div class="bg-pulse-grey w-25" style="width: 18px; height: 27px"></div>
+                                    <div class="bg-pulse-grey w-50 ml-2" style="height: 18px"></div>
+                                </div>
+                            </div>
+                        </div>                    </div>
+                </div>            </div>
+            <div class="footer-container position-relative" data-region="footer-container">
+                
+                <div class="hidden border-top bg-white position-relative" aria-hidden="true" data-region="view-conversation" data-enter-to-send="1">
+                    <div class="hidden p-sm-2" data-region="content-messages-footer-container">
+                        
+                            <div class="emoji-auto-complete-container w-100 hidden" data-region="emoji-auto-complete-container" aria-live="polite" aria-hidden="true">
+                            </div>
+                        <div class="d-flex mt-sm-1">
+                            <textarea dir="auto" data-region="send-message-txt" class="form-control bg-light" rows="3" data-auto-rows="" data-min-rows="3" data-max-rows="5" aria-label="Escribe un mensaje..." placeholder="Escribe un mensaje..." style="resize: none"></textarea>
+                        
+                            <div class="position-relative d-flex flex-column">
+                                    <div data-region="emoji-picker-container" class="emoji-picker-container hidden" aria-hidden="true">
+                                        
+                                        <div data-region="emoji-picker" class="card shadow emoji-picker">
+                                            <div class="card-header px-1 pt-1 pb-0 d-flex justify-content-between flex-shrink-0">
+                                                <button class="btn btn-outline-secondary icon-no-margin category-button selected" data-action="show-category" data-category="Recent" title="Reciente">
+                                                    <i class="icon fa fa-clock-o fa-fw " aria-hidden="true"></i>
+                                                </button>
+                                                <button class="btn btn-outline-secondary icon-no-margin category-button" data-action="show-category" data-category="Smileys &amp; People" title="Emoticonos y personas">
+                                                    <i class="icon fa fa-smile-o fa-fw " aria-hidden="true"></i>
+                                                </button>
+                                                <button class="btn btn-outline-secondary icon-no-margin category-button" data-action="show-category" data-category="Animals &amp; Nature" title="Animales y naturaleza">
+                                                    <i class="icon fa fa-leaf fa-fw " aria-hidden="true"></i>
+                                                </button>
+                                                <button class="btn btn-outline-secondary icon-no-margin category-button" data-action="show-category" data-category="Food &amp; Drink" title="Comida y bebida">
+                                                    <i class="icon fa fa-cutlery fa-fw " aria-hidden="true"></i>
+                                                </button>
+                                                <button class="btn btn-outline-secondary icon-no-margin category-button" data-action="show-category" data-category="Travel &amp; Places" title="Viaje y lugares">
+                                                    <i class="icon fa fa-plane fa-fw " aria-hidden="true"></i>
+                                                </button>
+                                                <button class="btn btn-outline-secondary icon-no-margin category-button" data-action="show-category" data-category="Activities" title="Actividades">
+                                                    <i class="icon fa fa-futbol-o fa-fw " aria-hidden="true"></i>
+                                                </button>
+                                                <button class="btn btn-outline-secondary icon-no-margin category-button" data-action="show-category" data-category="Objects" title="Objetos">
+                                                    <i class="icon fa fa-lightbulb-o fa-fw " aria-hidden="true"></i>
+                                                </button>
+                                                <button class="btn btn-outline-secondary icon-no-margin category-button" data-action="show-category" data-category="Symbols" title="Símbolos">
+                                                    <i class="icon fa fa-heart fa-fw " aria-hidden="true"></i>
+                                                </button>
+                                                <button class="btn btn-outline-secondary icon-no-margin category-button" data-action="show-category" data-category="Flags" title="Banderas">
+                                                    <i class="icon fa fa-flag fa-fw " aria-hidden="true"></i>
+                                                </button>
+                                            </div>
+                                            <div class="card-body p-2 d-flex flex-column overflow-hidden">
+                                                <div class="input-group mb-1 flex-shrink-0">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text pr-0 bg-white text-muted">
+                                                            <i class="icon fa fa-search fa-fw " aria-hidden="true"></i>
+                                                        </span>
+                                                    </div>
+                                                    <input type="text" class="form-control border-left-0" placeholder="Buscar" aria-label="Buscar" data-region="search-input">
+                                                </div>
+                                                <div class="flex-grow-1 overflow-auto emojis-container h-100" data-region="emojis-container">
+                                                    <div class="position-relative" data-region="row-container"></div>
+                                                </div>
+                                                <div class="flex-grow-1 overflow-auto search-results-container h-100 hidden" data-region="search-results-container">
+                                                    <div class="position-relative" data-region="row-container"></div>
+                                                </div>
+                                            </div>
+                                            <div class="card-footer d-flex flex-shrink-0" data-region="footer">
+                                                <div class="emoji-preview" data-region="emoji-preview"></div>
+                                                <div data-region="emoji-short-name" class="emoji-short-name text-muted text-wrap ml-2"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-link btn-icon icon-size-3 ml-1" aria-label="Selector de emoticono" data-action="toggle-emoji-picker">
+                                        <i class="icon fa fa-smile-o fa-fw " aria-hidden="true"></i>
+                                    </button>
+                                <button class="btn btn-link btn-icon icon-size-3 ml-1 mt-auto" aria-label="Enviar mensaje" data-action="send-message">
+                                    <span data-region="send-icon-container"><i class="icon fa fa-paper-plane fa-fw " aria-hidden="true"></i></span>
+                                    <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Enviando" aria-label="Enviando"></i></span>
+</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hidden p-sm-2" data-region="content-messages-footer-edit-mode-container">
+                        
+                        <div class="d-flex p-3 justify-content-end">
+                            <button class="btn btn-link btn-icon my-1 icon-size-4" data-action="delete-selected-messages" data-toggle="tooltip" data-placement="top" title="Eliminar mensajes seleccionados">
+                                <span data-region="icon-container"><i class="icon fa fa-trash fa-fw " aria-hidden="true"></i></span>
+                                <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Enviando" aria-label="Enviando"></i></span>
+</span>
+                                <span class="sr-only">Eliminar mensajes seleccionados</span>
+                            </button>
+                        </div>                    </div>
+                    <div class="hidden bg-secondary p-sm-3" data-region="content-messages-footer-require-contact-container">
+                        
+                        <div class="p-3 bg-white">
+                            <p data-region="title"></p>
+                            <p class="text-muted" data-region="text"></p>
+                            <button type="button" class="btn btn-primary btn-block" data-action="request-add-contact">
+                                <span data-region="dialogue-button-text">Enviar solicitud de contacto</span>
+                                <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Enviando" aria-label="Enviando"></i></span>
+</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="hidden bg-secondary p-sm-3" data-region="content-messages-footer-require-unblock-container">
+                        
+                        <div class="p-3 bg-white">
+                            <p class="text-muted" data-region="text">Ha bloqueado a este usuario.</p>
+                            <button type="button" class="btn btn-primary btn-block" data-action="request-unblock">
+                                <span data-region="dialogue-button-text">Desbloquear usuario</span>
+                                <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Enviando" aria-label="Enviando"></i></span>
+</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="hidden bg-secondary p-sm-3" data-region="content-messages-footer-unable-to-message">
+                        
+                        <div class="p-3 bg-white">
+                            <p class="text-muted" data-region="text">No puedes enviar mensajes a este usuario</p>
+                        </div>
+                    </div>
+                    <div class="p-sm-2" data-region="placeholder-container">
+                        <div class="d-flex">
+                            <div class="bg-pulse-grey w-100" style="height: 80px"></div>
+                            <div class="mx-2 mb-2 align-self-end bg-pulse-grey" style="height: 20px; width: 20px"></div>
+                        </div>                    </div>
+                    <div class="hidden position-absolute" data-region="confirm-dialogue-container" style="top: -1px; bottom: 0; right: 0; left: 0; background: rgba(0,0,0,0.3);"></div>
+                </div>                    <div data-region="view-overview" class="text-center">
+                        <a href="https://operacion.choucairtesting.com/academy/message/index.php">
+                            Ver todo
+                        </a>
+                    </div>
+            </div>
+        </div>
+
+</div>
+
+        <div id="nav-drawer" data-region="drawer" class="d-print-none moodle-has-zindex closed" aria-hidden="true" tabindex="-1">
+            <nav class="list-group" aria-label="BDD - SerenityBDD + Cucumber (POM)">
+                <ul>
+                        <li>
+                            <a class="list-group-item list-group-item-action active active_tree_node " href="https://operacion.choucairtesting.com/academy/course/view.php?id=1246" data-key="coursehome" data-isexpandable="0" data-indent="0" data-showdivider="0" data-type="60" data-nodetype="0" data-collapse="0" data-forceopen="1" data-isactive="1" data-hidden="0" data-preceedwithhr="0">
+                                <div class="ml-0">
+                                    <div class="media">
+                                            <span class="media-left">
+                                                <i class="icon fa fa-graduation-cap fa-fw " aria-hidden="true"></i>
+                                            </span>
+                                        <span class="media-body font-weight-bold">BDD - SerenityBDD + Cucumber (POM)</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="list-group-item list-group-item-action  " href="https://operacion.choucairtesting.com/academy/user/index.php?id=1246" data-key="participants" data-isexpandable="0" data-indent="0" data-showdivider="0" data-type="90" data-nodetype="1" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="1246">
+                                <div class="ml-0">
+                                    <div class="media">
+                                            <span class="media-left">
+                                                <i class="icon fa fa-users fa-fw " aria-hidden="true"></i>
+                                            </span>
+                                        <span class="media-body ">Participantes</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="list-group-item list-group-item-action  " href="https://operacion.choucairtesting.com/academy/badges/view.php?type=2&amp;id=1246" data-key="badgesview" data-isexpandable="0" data-indent="0" data-showdivider="0" data-type="70" data-nodetype="0" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="1246">
+                                <div class="ml-0">
+                                    <div class="media">
+                                            <span class="media-left">
+                                                <i class="icon fa fa-shield fa-fw " aria-hidden="true"></i>
+                                            </span>
+                                        <span class="media-body ">Insignias</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="list-group-item list-group-item-action  " href="https://operacion.choucairtesting.com/academy/admin/tool/lp/coursecompetencies.php?courseid=1246" data-key="competencies" data-isexpandable="0" data-indent="0" data-showdivider="0" data-type="70" data-nodetype="0" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="1246">
+                                <div class="ml-0">
+                                    <div class="media">
+                                            <span class="media-left">
+                                                <i class="icon fa fa-check-square-o fa-fw " aria-hidden="true"></i>
+                                            </span>
+                                        <span class="media-body ">Competencias</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="list-group-item list-group-item-action  " href="https://operacion.choucairtesting.com/academy/grade/report/index.php?id=1246" data-key="grades" data-isexpandable="0" data-indent="0" data-showdivider="0" data-type="70" data-nodetype="0" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="1246">
+                                <div class="ml-0">
+                                    <div class="media">
+                                            <span class="media-left">
+                                                <i class="icon fa fa-table fa-fw " aria-hidden="true"></i>
+                                            </span>
+                                        <span class="media-body ">Calificaciones</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="list-group-item list-group-item-action  " href="https://operacion.choucairtesting.com/academy/course/view.php?id=1246#section-0" data-key="804" data-isexpandable="0" data-indent="0" data-showdivider="0" data-type="30" data-nodetype="1" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="1246">
+                                <div class="ml-0">
+                                    <div class="media">
+                                            <span class="media-left">
+                                                <i class="icon fa fa-folder-o fa-fw " aria-hidden="true"></i>
+                                            </span>
+                                        <span class="media-body ">Automatización - Recursos para el aprendizaje</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="list-group-item list-group-item-action  " href="https://operacion.choucairtesting.com/academy/course/view.php?id=1246#section-1" data-key="809" data-isexpandable="0" data-indent="0" data-showdivider="0" data-type="30" data-nodetype="1" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="1246">
+                                <div class="ml-0">
+                                    <div class="media">
+                                            <span class="media-left">
+                                                <i class="icon fa fa-folder-o fa-fw " aria-hidden="true"></i>
+                                            </span>
+                                        <span class="media-body ">BDD - SerenityBDD + Cucumber (POM)</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="list-group-item list-group-item-action  " href="https://operacion.choucairtesting.com/academy/course/view.php?id=1246#section-2" data-key="810" data-isexpandable="0" data-indent="0" data-showdivider="0" data-type="30" data-nodetype="1" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="1246">
+                                <div class="ml-0">
+                                    <div class="media">
+                                            <span class="media-left">
+                                                <i class="icon fa fa-folder-o fa-fw " aria-hidden="true"></i>
+                                            </span>
+                                        <span class="media-body ">Retos Técnicos</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        </ul>
+                        </nav>
+                        <nav class="list-group mt-1" aria-label="Sitio">
+                        <ul>
+                        <li>
+                            <a class="list-group-item list-group-item-action  " href="https://operacion.choucairtesting.com/academy/my/" data-key="myhome" data-isexpandable="0" data-indent="0" data-showdivider="1" data-type="1" data-nodetype="1" data-collapse="0" data-forceopen="1" data-isactive="0" data-hidden="0" data-preceedwithhr="0">
+                                <div class="ml-0">
+                                    <div class="media">
+                                            <span class="media-left">
+                                                <i class="icon fa fa-tachometer fa-fw " aria-hidden="true"></i>
+                                            </span>
+                                        <span class="media-body ">Área personal</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="list-group-item list-group-item-action  " href="https://operacion.choucairtesting.com/academy/?redirect=0" data-key="home" data-isexpandable="0" data-indent="0" data-showdivider="0" data-type="70" data-nodetype="0" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="myhome">
+                                <div class="ml-0">
+                                    <div class="media">
+                                            <span class="media-left">
+                                                <i class="icon fa fa-home fa-fw " aria-hidden="true"></i>
+                                            </span>
+                                        <span class="media-body ">Inicio del sitio</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="list-group-item list-group-item-action  " href="https://operacion.choucairtesting.com/academy/calendar/view.php?view=month&amp;course=1246" data-key="calendar" data-isexpandable="0" data-indent="0" data-showdivider="0" data-type="60" data-nodetype="0" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="1">
+                                <div class="ml-0">
+                                    <div class="media">
+                                            <span class="media-left">
+                                                <i class="icon fa fa-calendar fa-fw " aria-hidden="true"></i>
+                                            </span>
+                                        <span class="media-body ">Calendario</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="list-group-item list-group-item-action  " href="https://operacion.choucairtesting.com/academy/user/files.php" data-key="privatefiles" data-isexpandable="0" data-indent="0" data-showdivider="0" data-type="70" data-nodetype="0" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="1">
+                                <div class="ml-0">
+                                    <div class="media">
+                                            <span class="media-left">
+                                                <i class="icon fa fa-file-o fa-fw " aria-hidden="true"></i>
+                                            </span>
+                                        <span class="media-body ">Archivos privados</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <div class="list-group-item " data-key="mycourses" data-isexpandable="1" data-indent="0" data-showdivider="0" data-type="0" data-nodetype="1" data-collapse="0" data-forceopen="1" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="myhome">
+                                <div class="ml-0">
+                                    <div class="media">
+                                            <span class="media-left">
+                                                <i class="icon fa fa-graduation-cap fa-fw " aria-hidden="true"></i>
+                                            </span>
+                                        <span class="media-body">Mis cursos</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="list-group-item list-group-item-action  " href="https://operacion.choucairtesting.com/academy/course/view.php?id=1284" data-key="1284" data-isexpandable="1" data-indent="1" data-showdivider="0" data-type="20" data-nodetype="1" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="mycourses">
+                                <div class="ml-1">
+                                    <div class="media">
+                                            <span class="media-left">
+                                                <i class="icon fa fa-graduation-cap fa-fw " aria-hidden="true"></i>
+                                            </span>
+                                        <span class="media-body ">BDD (Desarrollo guiado por pruebas)</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="list-group-item list-group-item-action  " href="https://operacion.choucairtesting.com/academy/course/view.php?id=1208" data-key="1208" data-isexpandable="1" data-indent="1" data-showdivider="0" data-type="20" data-nodetype="1" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="mycourses">
+                                <div class="ml-1">
+                                    <div class="media">
+                                            <span class="media-left">
+                                                <i class="icon fa fa-graduation-cap fa-fw " aria-hidden="true"></i>
+                                            </span>
+                                        <span class="media-body ">DevOps </span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="list-group-item list-group-item-action  " href="https://operacion.choucairtesting.com/academy/course/view.php?id=585" data-key="585" data-isexpandable="1" data-indent="1" data-showdivider="0" data-type="20" data-nodetype="1" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="mycourses">
+                                <div class="ml-1">
+                                    <div class="media">
+                                            <span class="media-left">
+                                                <i class="icon fa fa-graduation-cap fa-fw " aria-hidden="true"></i>
+                                            </span>
+                                        <span class="media-body ">Estimación - I</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="list-group-item list-group-item-action  " href="https://operacion.choucairtesting.com/academy/course/view.php?id=584" data-key="584" data-isexpandable="1" data-indent="1" data-showdivider="0" data-type="20" data-nodetype="1" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="mycourses">
+                                <div class="ml-1">
+                                    <div class="media">
+                                            <span class="media-left">
+                                                <i class="icon fa fa-graduation-cap fa-fw " aria-hidden="true"></i>
+                                            </span>
+                                        <span class="media-body ">Pareto</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="list-group-item list-group-item-action  " href="https://operacion.choucairtesting.com/academy/course/view.php?id=582" data-key="582" data-isexpandable="1" data-indent="1" data-showdivider="0" data-type="20" data-nodetype="1" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="mycourses">
+                                <div class="ml-1">
+                                    <div class="media">
+                                            <span class="media-left">
+                                                <i class="icon fa fa-graduation-cap fa-fw " aria-hidden="true"></i>
+                                            </span>
+                                        <span class="media-body ">Riesgos</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="list-group-item list-group-item-action  " href="https://operacion.choucairtesting.com/academy/course/view.php?id=580" data-key="580" data-isexpandable="1" data-indent="1" data-showdivider="0" data-type="20" data-nodetype="1" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="mycourses">
+                                <div class="ml-1">
+                                    <div class="media">
+                                            <span class="media-left">
+                                                <i class="icon fa fa-graduation-cap fa-fw " aria-hidden="true"></i>
+                                            </span>
+                                        <span class="media-body ">Suite de Pruebas</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="list-group-item list-group-item-action  " href="https://operacion.choucairtesting.com/academy/course/view.php?id=490" data-key="490" data-isexpandable="1" data-indent="1" data-showdivider="0" data-type="20" data-nodetype="1" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="mycourses">
+                                <div class="ml-1">
+                                    <div class="media">
+                                            <span class="media-left">
+                                                <i class="icon fa fa-graduation-cap fa-fw " aria-hidden="true"></i>
+                                            </span>
+                                        <span class="media-body ">Agile Básico</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="list-group-item list-group-item-action  " href="https://operacion.choucairtesting.com/academy/course/view.php?id=597" data-key="597" data-isexpandable="1" data-indent="1" data-showdivider="0" data-type="20" data-nodetype="1" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="mycourses">
+                                <div class="ml-1">
+                                    <div class="media">
+                                            <span class="media-left">
+                                                <i class="icon fa fa-graduation-cap fa-fw " aria-hidden="true"></i>
+                                            </span>
+                                        <span class="media-body ">Usabilidad</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="list-group-item list-group-item-action  " href="https://operacion.choucairtesting.com/academy/course/view.php?id=596" data-key="596" data-isexpandable="1" data-indent="1" data-showdivider="0" data-type="20" data-nodetype="1" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="mycourses">
+                                <div class="ml-1">
+                                    <div class="media">
+                                            <span class="media-left">
+                                                <i class="icon fa fa-graduation-cap fa-fw " aria-hidden="true"></i>
+                                            </span>
+                                        <span class="media-body ">Pruebas de Migración</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="list-group-item list-group-item-action  " href="https://operacion.choucairtesting.com/academy/course/view.php?id=595" data-key="595" data-isexpandable="1" data-indent="1" data-showdivider="0" data-type="20" data-nodetype="1" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="mycourses">
+                                <div class="ml-1">
+                                    <div class="media">
+                                            <span class="media-left">
+                                                <i class="icon fa fa-graduation-cap fa-fw " aria-hidden="true"></i>
+                                            </span>
+                                        <span class="media-body ">Pruebas Móviles</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="list-group-item list-group-item-action  " href="https://operacion.choucairtesting.com/academy/my/" data-key="courseindexpage" data-isexpandable="0" data-indent="1" data-showdivider="0" data-type="60" data-nodetype="0" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="mycourses">
+                                <div class="ml-1">
+                                    <div class="media">
+                                            <span class="media-left">
+                                                <i class="icon fa fa-fw fa-fw " aria-hidden="true"></i>
+                                            </span>
+                                        <span class="media-body ">Más ...</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                </ul>
+            </nav>
+        </div>
+
+        
+
+    
+    
+    
+    <footer id="page-footer" class="py-3 text-light" style="background-color: #1E2429">
+        <div class="container">
+    
+            <div id="course-footer"></div>
+    		<br>
+    
+            <div class="row">
+                    <div class="col-md-3">
+    				
+                        <div class="brandbox">
+    				       <h5><strong>MEDELLÍN</strong></h5>
+    				       <span style="color: #2b7de1"><i class="fa fa-home"></i></span> Centro Empresarial Olaya Herrera, Cra.52 #14 - 30 Oficina 421
+    					   <br>
+    					   <br>
+    			     	   <span style="color: #2b7de1"><i class="fa fa-phone"></i></span> (57)(4) 448 05 10
+                        </div>
+    				</div>
+    				
+    				<div class="col-md-3">
+    				
+                        <div class="brandbox">
+    				       <h5><strong>BOGOTÁ</strong></h5>
+    				       <span style="color: #2b7de1"><i class="fa fa-home"></i></span> Distrito Capital, Edificio Office Class, Cra 16a #79 - 05 Oficina 203
+    					   <br>
+    					   <br>
+    			     	   <span style="color: #2b7de1"><i class="fa fa-phone"></i></span> (57)(1) 256 94 55
+                        </div>
+    				</div>
+    				
+    				<div class="col-md-3">
+    				
+                        <div class="brandbox">
+    				       <h5><strong>CIUDAD DE PANAMÁ</strong></h5>
+    				       <span style="color: #2b7de1"> <i class="fa fa-home"></i></span> Ciudad del Saber, Clayton Edificio 120, Oficinas Ejecutivas
+    					   <br>
+    					   <br>
+    			     	   <span style="color: #2b7de1"><i class="fa fa-phone"></i></span> (507) 306 37 10
+                        </div>
+    				</div>
+    				
+    				<div class="col-md-3">
+    				
+                        <div class="brandbox">
+    				       <h5><strong>LIMA</strong></h5>
+    				       <span style="color: #2b7de1"><i class="fa fa-home"></i></span> Avenida. Juan de Arona 755, piso 9, oficina 123, San Isidro.
+    					   <br>
+    					   <br>
+    			     	   <span style="color: #2b7de1"><i class="fa fa-phone"></i></span> (+51) 984 270 574
+                        </div>
+    				</div>
+            </div>
+    
+            <div class="row" style="margin-top: 15px;">
+                <div class="site-info container">
+                    <div class="text-center">
+                        <a class="link" href="https://www.choucairtesting.com/tratamientos-de-datos/"><strong>Tratamiento de Datos |</strong></a>
+                        <a class="link" href="https://www.choucairtesting.com/wp-content/uploads/2018/09/terminos-y-condiciones-de-uso.pdf"><strong>Términos y Condiciones |</strong></a>
+                        <a class="link" href="https://www.choucairtesting.com/wp-content/uploads/2018/09/Codigo-de-buen-gobierno.pdf"><strong>Buen Gobierno |</strong></a>
+                        <a class="link" href="mailto:lineaetica@choucairtesting.com"><strong>Línea Ética |</strong></a>
+                        <a class="link" href="https://www.choucairtesting.com/wp-content/uploads/2018/09/manual-etica-cumplimiento.pdf"><strong> Ética y Cumplimiento |</strong></a>
+                        <a class="link" href="https://www.choucairtesting.com/pqrs"><strong> PQRS </strong></a>
+                    </div>
+                </div>
+            </div>
+    
+    		<div class="row" style="margin-top: 25px;">
+    		     
+    				<div class="col-md-12 text-center">
+    
+    				     <div class="text_to_html"><p>Choucair Cárdenas Testing. Todos los derechos reservados – 2018. Choucair ©<br></p></div>
+    				     
+    				</div>
+    	
+    		</div>
+            <nav class="nav navbar-nav d-md-none">
+                    <ul class="list-unstyled pt-3">
+                    </ul>
+            </nav>
+    
+            <script>
+//<![CDATA[
+var require = {
+    baseUrl : 'https://operacion.choucairtesting.com/academy/lib/requirejs.php/1629813409/',
+    // We only support AMD modules with an explicit define() statement.
+    enforceDefine: true,
+    skipDataMain: true,
+    waitSeconds : 0,
+
+    paths: {
+        jquery: 'https://operacion.choucairtesting.com/academy/lib/javascript.php/1629813409/lib/jquery/jquery-3.4.1.min',
+        jqueryui: 'https://operacion.choucairtesting.com/academy/lib/javascript.php/1629813409/lib/jquery/ui-1.12.1/jquery-ui.min',
+        jqueryprivate: 'https://operacion.choucairtesting.com/academy/lib/javascript.php/1629813409/lib/requirejs/jquery-private'
+    },
+
+    // Custom jquery config map.
+    map: {
+      // '*' means all modules will get 'jqueryprivate'
+      // for their 'jquery' dependency.
+      '*': { jquery: 'jqueryprivate' },
+      // Stub module for 'process'. This is a workaround for a bug in MathJax (see MDL-60458).
+      '*': { process: 'core/first' },
+
+      // 'jquery-private' wants the real jQuery module
+      // though. If this line was not here, there would
+      // be an unresolvable cyclic dependency.
+      jqueryprivate: { jquery: 'jquery' }
+    }
+};
+
+//]]>
+</script>
+<script src="https://operacion.choucairtesting.com/academy/lib/javascript.php/1629813409/lib/requirejs/require.min.js"></script>
+<script>
+//<![CDATA[
+M.util.js_pending("core/first");require(['core/first'], function() {
+require(['core/prefetch']);
+;
+require(["media_videojs/loader"], function(loader) {
+    loader.setUp(function(videojs) {
+        videojs.options.flash.swf = "https://operacion.choucairtesting.com/academy/media/player/videojs/videojs/video-js.swf";
+videojs.addLanguage('es', {
+  "Play": "Reproducir",
+  "Play Video": "Reproducir Vídeo",
+  "Pause": "Pausa",
+  "Current Time": "Tiempo reproducido",
+  "Duration": "Duración total",
+  "Remaining Time": "Tiempo restante",
+  "Stream Type": "Tipo de secuencia",
+  "LIVE": "DIRECTO",
+  "Loaded": "Cargado",
+  "Progress": "Progreso",
+  "Fullscreen": "Pantalla completa",
+  "Non-Fullscreen": "Pantalla no completa",
+  "Mute": "Silenciar",
+  "Unmute": "No silenciado",
+  "Playback Rate": "Velocidad de reproducción",
+  "Subtitles": "Subtítulos",
+  "subtitles off": "Subtítulos desactivados",
+  "Captions": "Subtítulos especiales",
+  "captions off": "Subtítulos especiales desactivados",
+  "Chapters": "Capítulos",
+  "You aborted the media playback": "Ha interrumpido la reproducción del vídeo.",
+  "A network error caused the media download to fail part-way.": "Un error de red ha interrumpido la descarga del vídeo.",
+  "The media could not be loaded, either because the server or network failed or because the format is not supported.": "No se ha podido cargar el vídeo debido a un fallo de red o del servidor o porque el formato es incompatible.",
+  "The media playback was aborted due to a corruption problem or because the media used features your browser did not support.": "La reproducción de vídeo se ha interrumpido por un problema de corrupción de datos o porque el vídeo precisa funciones que su navegador no ofrece.",
+  "No compatible source was found for this media.": "No se ha encontrado ninguna fuente compatible con este vídeo.",
+  "Audio Player": "Reproductor de audio",
+  "Video Player": "Reproductor de video",
+  "Replay": "Volver a reproducir",
+  "Seek to live, currently behind live": "Buscar en vivo, actualmente demorado con respecto a la transmisión en vivo",
+  "Seek to live, currently playing live": "Buscar en vivo, actualmente reproduciendo en vivo",
+  "Progress Bar": "Barra de progreso",
+  "progress bar timing: currentTime={1} duration={2}": "{1} de {2}",
+  "Descriptions": "Descripciones",
+  "descriptions off": "descripciones desactivadas",
+  "Audio Track": "Pista de audio",
+  "Volume Level": "Nivel de volumen",
+  "The media is encrypted and we do not have the keys to decrypt it.": "El material audiovisual está cifrado y no tenemos las claves para descifrarlo.",
+  "Close": "Cerrar",
+  "Modal Window": "Ventana modal",
+  "This is a modal window": "Esta es una ventana modal",
+  "This modal can be closed by pressing the Escape key or activating the close button.": "Esta ventana modal puede cerrarse presionando la tecla Escape o activando el botón de cierre.",
+  ", opens captions settings dialog": ", abre el diálogo de configuración de leyendas",
+  ", opens subtitles settings dialog": ", abre el diálogo de configuración de subtítulos",
+  ", selected": ", seleccionado",
+  "Close Modal Dialog": "Cierra cuadro de diálogo modal",
+  ", opens descriptions settings dialog": ", abre el diálogo de configuración de las descripciones",
+  "captions settings": "configuración de leyendas",
+  "subtitles settings": "configuración de subtítulos",
+  "descriptions settings": "configuración de descripciones",
+  "Text": "Texto",
+  "White": "Blanco",
+  "Black": "Negro",
+  "Red": "Rojo",
+  "Green": "Verde",
+  "Blue": "Azul",
+  "Yellow": "Amarillo",
+  "Magenta": "Magenta",
+  "Cyan": "Cian",
+  "Background": "Fondo",
+  "Window": "Ventana",
+  "Transparent": "Transparente",
+  "Semi-Transparent": "Semitransparente",
+  "Opaque": "Opaca",
+  "Font Size": "Tamaño de fuente",
+  "Text Edge Style": "Estilo de borde del texto",
+  "None": "Ninguno",
+  "Raised": "En relieve",
+  "Depressed": "Hundido",
+  "Uniform": "Uniforme",
+  "Dropshadow": "Sombra paralela",
+  "Font Family": "Familia de fuente",
+  "Proportional Sans-Serif": "Sans-Serif proporcional",
+  "Monospace Sans-Serif": "Sans-Serif monoespacio",
+  "Proportional Serif": "Serif proporcional",
+  "Monospace Serif": "Serif monoespacio",
+  "Casual": "Informal",
+  "Script": "Cursiva",
+  "Small Caps": "Minúsculas",
+  "Reset": "Restablecer",
+  "restore all settings to the default values": "restablece todas las configuraciones a los valores predeterminados",
+  "Done": "Listo",
+  "Caption Settings Dialog": "Diálogo de configuración de leyendas",
+  "Beginning of dialog window. Escape will cancel and close the window.": "Comienzo de la ventana de diálogo. La tecla Escape cancelará la operación y cerrará la ventana.",
+  "End of dialog window.": "Final de la ventana de diálogo.",
+  "{1} is loading.": "{1} se está cargando."
+});
+
+    });
+});;
+M.util.js_pending('core/search-input'); require(['core/search-input'], function(amd) {amd.init("6140d4c361200"); M.util.js_complete('core/search-input');});;
+
+require(['jquery', 'message_popup/notification_popover_controller'], function($, controller) {
+    var container = $('#nav-notification-popover-container');
+    var controller = new controller(container);
+    controller.registerEventListeners();
+    controller.registerListNavigationEventListeners();
+});
+;
+
+require(
+[
+    'jquery',
+    'core_message/message_popover'
+],
+function(
+    $,
+    Popover
+) {
+    var toggle = $('#message-drawer-toggle-6140d4c3653f26140d4c331d5e4');
+    Popover.init(toggle);
+});
+;
+
+require(['jquery', 'core_message/message_drawer'], function($, MessageDrawer) {
+    var root = $('#message-drawer-6140d4c36f66d6140d4c331d5e14');
+    MessageDrawer.init(root, '6140d4c36f66d6140d4c331d5e14', false);
+});
+;
+
+require(['theme_boost/loader']);
+require(['jquery','theme_boost/tooltip'], function($){$('[data-tooltip="tooltip"]').tooltip()});
+require(['theme_boost/drawer'], function(mod) {
+    mod.init();
+});
+;
+M.util.js_pending('core/notification'); require(['core/notification'], function(amd) {amd.init(12721, [], true); M.util.js_complete('core/notification');});;
+M.util.js_pending('core/log'); require(['core/log'], function(amd) {amd.setConfig({"level":"warn"}); M.util.js_complete('core/log');});;
+M.util.js_pending('core/page_global'); require(['core/page_global'], function(amd) {amd.init(); M.util.js_complete('core/page_global');});M.util.js_complete("core/first");
+});
+//]]>
+</script>
+<script>
+//<![CDATA[
+M.yui.add_module({"mod_folder":{"name":"mod_folder","fullpath":"https:\/\/operacion.choucairtesting.com\/academy\/lib\/javascript.php\/1629813409\/mod\/folder\/module.js","requires":[]}});
+
+//]]>
+</script>
+<script src="https://operacion.choucairtesting.com/academy/lib/javascript.php/1629813409/theme/fordson/javascript/scrolltotop.js"></script>
+<script src="https://operacion.choucairtesting.com/academy/lib/javascript.php/1629813409/theme/fordson/javascript/scrollspy.js"></script>
+<script src="https://operacion.choucairtesting.com/academy/lib/javascript.php/1629813409/theme/fordson/javascript/blockslider.js"></script>
+<script src="https://operacion.choucairtesting.com/academy/lib/javascript.php/1629813409/theme/fordson/javascript/courseblock.js"></script>
+<script src="https://operacion.choucairtesting.com/academy/lib/javascript.php/1629813409/course/format/topics/format.js"></script>
+<script>
+//<![CDATA[
+M.str = {"moodle":{"lastmodified":"\u00daltima modificaci\u00f3n","name":"Nombre","error":"Error","info":"Informaci\u00f3n","yes":"S\u00ed","no":"No","cancel":"Cancelar","confirm":"Confirmar","areyousure":"\u00bfEst\u00e1 seguro?","closebuttontitle":"Cerrar","unknownerror":"Error desconocido","file":"Archivo","url":"URL"},"repository":{"type":"Tipo","size":"Tama\u00f1o","invalidjson":"Cadena JSON no v\u00e1lida","nofilesattached":"No se han adjuntado archivos","filepicker":"Selector de archivos","logout":"Salir","nofilesavailable":"No hay archivos disponibles","norepositoriesavailable":"Lo sentimos, ninguno de sus repositorios actuales puede devolver archivos en el formato solicitado.","fileexistsdialogheader":"El archivo existe","fileexistsdialog_editor":"Un archivo con ese nombre ha sido anexado al texto que Usted est\u00e1 editando","fileexistsdialog_filemanager":"Ya ha sido anexado un archivo con ese nombre","renameto":"Cambiar el nombre a \"{$a}\"","referencesexist":"Existen {$a} enlaces a este archivo","select":"Seleccionar"},"admin":{"confirmdeletecomments":"Est\u00e1 a punto de eliminar comentarios, \u00bfest\u00e1 seguro?","confirmation":"Confirmaci\u00f3n"},"completion":{"completion-alt-manual-y":"Finalizado; {$a} seleccione para marcar como no finalizado","completion-alt-manual-n":"No finalizado; {$a}. Seleccione para marcar como finalizado"},"debug":{"debuginfo":"Informaci\u00f3n de depuraci\u00f3n","line":"L\u00ednea","stacktrace":"Trazado de la pila (stack)"},"langconfig":{"labelsep":":"}};
+//]]>
+</script>
+<script>
+//<![CDATA[
+(function() {Y.use("moodle-filter_mathjaxloader-loader",function() {M.filter_mathjaxloader.configure({"mathjaxconfig":"\nMathJax.Hub.Config({\n    config: [\"Accessible.js\", \"Safe.js\"],\n    errorSettings: { message: [\"!\"] },\n    skipStartupTypeset: true,\n    messageStyle: \"none\"\n});\n","lang":"es"});
+});
+ M.util.js_pending('random6140d4c331d5e1'); Y.use('core_completion', function(Y) { M.core_completion.init(Y);  M.util.js_complete('random6140d4c331d5e1'); });
+M.util.help_popups.setup(Y);
+ M.util.js_pending('random6140d4c331d5e15'); Y.use('mod_folder', function(Y) { M.mod_folder.init_tree(Y, "folder_tree0", true);  M.util.js_complete('random6140d4c331d5e15'); });
+ M.util.js_pending('random6140d4c331d5e17'); Y.use('mod_folder', function(Y) { M.mod_folder.init_tree(Y, "folder_tree1", true);  M.util.js_complete('random6140d4c331d5e17'); });
+ M.util.js_pending('random6140d4c331d5e19'); Y.on('domready', function() { M.util.js_complete("init");  M.util.js_complete('random6140d4c331d5e19'); });
+})();
+//]]>
+</script>
+
+    
+        </div>
+    
+    </footer>
+
+</div><div id="yui3-css-stamp" style="position: absolute !important; visibility: hidden !important" class=""></div>
+
+<a href="#" id="back-to-top" class="btn btn-primary btn-lg" role="button" title="Volver arriba y Scrollspy"><i class="fa fa-chevron-circle-up" aria-hidden="true"></i></a>
+
+
+</body></html>
